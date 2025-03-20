@@ -7,9 +7,10 @@ const Main = styled("main")`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 78px;
   background-image: url("/images/hero.png");
   width: 100%;
-  height: 750px;
+  height: 725px;
   background-size: cover;
   background-position: center;
 `;
@@ -19,7 +20,14 @@ const ImageContainer = styled("div")`
   gap: 40px;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 30px;
+`;
+const SubContainer = styled("div")`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 55px;
 `;
 export default function Hero() {
   return (
@@ -28,12 +36,16 @@ export default function Hero() {
         <img src="/images/logo.png" alt="logo" width={184} height={79} />
         <Navbar />
       </ImageContainer>
-      <HeroTitle>Luxury That Empowers</HeroTitle>
-      <Button>
-        <HeadingBold color={RenderaPalette.white0}>
-          Explore Collections
-        </HeadingBold>
-      </Button>
+      <SubContainer>
+        <HeroTitle color={RenderaPalette.white0}>
+          Luxury That Empowers
+        </HeroTitle>
+        <Button>
+          <HeadingBold color={RenderaPalette.white0}>
+            Explore Collections
+          </HeadingBold>
+        </Button>
+      </SubContainer>
     </Main>
   );
 }
