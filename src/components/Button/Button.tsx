@@ -1,13 +1,28 @@
 import styled from "styled-components";
 import { RenderaPalette } from "../../Colors";
+import { ReactNode } from "react";
+import { HeadingBold } from "../../Typography";
 interface ButtonProps {
   variant?: "primary" | "secondary";
   size?: "small" | "medium" | "large";
   backgroundColor?: string;
   color?: string;
+  alignSelf?: "left" | "center" | "right";
+  children: ReactNode;
 }
 
-const Button = styled.button<ButtonProps>`
+const StyledButton = styled.button<ButtonProps>`
+  display: flex;
+  align-self: ${({ alignSelf = "center" }) => {
+    switch (alignSelf) {
+      case "left":
+        return "flex-start";
+      case "right":
+        return "flex-end";
+      default:
+        return "center";
+    }
+  }};
   font-family: Poppins, sans-serif;
   border: none;
   cursor: pointer;
@@ -55,4 +70,10 @@ background-color: ${({ backgroundColor }) =>
   }
 `;
 
-export default Button;
+export default function Button({ children, ...props }: ButtonProps) {
+  return (
+    <StyledButton {...props}>
+      <HeadingBold color={RenderaPalette.white0}>{children}</HeadingBold>
+    </StyledButton>
+  );
+}

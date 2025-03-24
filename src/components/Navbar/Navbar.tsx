@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BodyText } from "../../Typography";
+import { HeadingLightSmall } from "../../Typography";
 import { RenderaPalette } from "../../Colors";
 
 const NavbarContainer = styled("nav")`
@@ -8,7 +8,7 @@ const NavbarContainer = styled("nav")`
 `;
 const NavList = styled("ul")`
   display: flex;
-  gap: 30px;
+  gap: 50px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -17,28 +17,47 @@ const NavList = styled("ul")`
 const NavItem = styled("li")`
   display: flex;
   cursor: pointer;
+  &:hover ${HeadingLightSmall} {
+    font-weight: 800;
+    font-size: 16px;
+    color: ${RenderaPalette.peach100};
+    line-height: 100%;
+    letter-spacing: 0;
+  }
 `;
 export default function Navbar() {
   return (
     <NavbarContainer>
       <NavList>
         <NavItem>
-          <BodyText color={RenderaPalette.white0}>Home</BodyText>
+          <HeadingLightSmall color={RenderaPalette.white0}>
+            Home
+          </HeadingLightSmall>
         </NavItem>
         <NavItem>
-          <BodyText color={RenderaPalette.white0}>About</BodyText>
+          <HeadingLightSmall color={RenderaPalette.white0}>
+            About
+          </HeadingLightSmall>
         </NavItem>
         <NavItem>
-          <BodyText color={RenderaPalette.white0}>Shop</BodyText>
+          <HeadingLightSmall color={RenderaPalette.white0}>
+            Shop
+          </HeadingLightSmall>
         </NavItem>
         <NavItem>
-          <BodyText color={RenderaPalette.white0}>Collections</BodyText>
+          <HeadingLightSmall color={RenderaPalette.white0}>
+            Collections
+          </HeadingLightSmall>
         </NavItem>
         <NavItem>
-          <BodyText color={RenderaPalette.white0}>Blog</BodyText>
+          <HeadingLightSmall color={RenderaPalette.white0}>
+            Blog
+          </HeadingLightSmall>
         </NavItem>
         <NavItem>
-          <BodyText color={RenderaPalette.white0}>Contact</BodyText>
+          <HeadingLightSmall color={RenderaPalette.white0}>
+            Contact
+          </HeadingLightSmall>
         </NavItem>
       </NavList>
     </NavbarContainer>

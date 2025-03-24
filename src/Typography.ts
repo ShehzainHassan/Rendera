@@ -64,6 +64,14 @@ export const HeadingSmall = styled.p<{ color?: string }>`
   color: ${(props) => props.color || RenderaPalette.black1000};
 `;
 
+export const HeadingLightSmall = styled.p<{ color?: string }>`
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: ${(props) => props.color || RenderaPalette.black1000};
+`;
+
 export const ExtraLargeText = styled.p<{ color?: string }>`
   font-family: Poppins, sans-serif;
   font-weight: 400;
@@ -96,6 +104,15 @@ export const MediumText = styled.p<{ color?: string }>`
   font-weight: 400;
   font-size: 16px;
   line-height: 100%;
+  letter-spacing: 0.1px;
+  color: ${(props) => props.color || RenderaPalette.black1000};
+`;
+
+export const MediumTextWithLineHeight = styled.p<{ color?: string }>`
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
   letter-spacing: 0.1px;
   color: ${(props) => props.color || RenderaPalette.black1000};
 `;

@@ -11,4 +11,5 @@ export const RenderaPalette = {
   gray900: "#2F2F2F",
   black950: "#1E1E1E",
   black1000: "#000000",
+  peach100: "#F6D4B4",
 };
