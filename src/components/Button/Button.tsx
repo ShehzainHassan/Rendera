@@ -57,7 +57,6 @@ const StyledButton = styled.button<ButtonProps>`
 background-color: ${({ backgroundColor }) =>
     backgroundColor ? backgroundColor : RenderaPalette.tan300};
 
-  color: ${({ color }) => (color ? color : RenderaPalette.white0)};
   &:hover {
     background-color: ${({ backgroundColor }) => {
       if (!backgroundColor) {
@@ -70,10 +69,14 @@ background-color: ${({ backgroundColor }) =>
   }
 `;
 
-export default function Button({ children, ...props }: ButtonProps) {
+export default function Button({
+  children,
+  color = RenderaPalette.white0,
+  ...props
+}: ButtonProps) {
   return (
-    <StyledButton {...props}>
-      <HeadingBold color={RenderaPalette.white0}>{children}</HeadingBold>
+    <StyledButton color={color} {...props}>
+      <HeadingBold color={color}>{children}</HeadingBold>
     </StyledButton>
   );
 }

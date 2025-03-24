@@ -1,5 +1,6 @@
 export const RenderaPalette = {
   white0: "#FFFFFF",
+  white100: "#EEDDEE",
   beige100: "#F9F3EE",
   beige200: "#F5E8DA",
   beige300: "#FFF8F0",
@@ -15,4 +16,5 @@ export const RenderaPalette = {
   black950: "#1E1E1E",
   black1000: "#000000",
   peach100: "#F6D4B4",
+  yellow100: "#e9c871",
 };

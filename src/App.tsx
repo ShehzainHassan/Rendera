@@ -1,5 +1,6 @@
 import "./App.css";
 import AboutUs from "./components/AboutUs/AboutUs";
+import ContactUs from "./components/ContactUs/ContactUs";
 import Hero from "./components/Hero/Hero";
 import LatestNews from "./components/LatestNews/LatestNews";
 import Reviews from "./components/Reviews/Reviews";
@@ -15,6 +16,7 @@ function App() {
         <Trending />
         <Reviews />
         <LatestNews />
+        <ContactUs />
       </Wrapper>
     </>
   );
