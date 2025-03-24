@@ -9,6 +9,7 @@ import {
 
 const CardContainer = styled.div<{ cardType: "big" | "medium" }>`
   display: flex;
+  justify-content: center;
   flex-direction: column;
   width: ${({ cardType }) => (cardType === "medium" ? "384px" : "470px")};
   height: ${({ cardType }) => (cardType === "medium" ? "184px" : "224px")};

@@ -47,8 +47,9 @@ export default function ContactUs() {
           <InputField />
           <Button
             variant="secondary"
-            color={RenderaPalette.black1000}
-            backgroundColor={RenderaPalette.yellow100}>
+            // color={RenderaPalette.black1000}
+            // backgroundColor={RenderaPalette.yellow100}
+          >
             Subscribe
           </Button>
         </InputContainer>

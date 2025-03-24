@@ -5,7 +5,6 @@ import { HeadingBold } from "../../Typography";
 interface ButtonProps {
   variant?: "primary" | "secondary";
   size?: "small" | "medium" | "large";
-  backgroundColor?: string;
   color?: string;
   alignSelf?: "left" | "center" | "right";
   children: ReactNode;
@@ -53,30 +52,27 @@ const StyledButton = styled.button<ButtonProps>`
         return `border-radius: 62px; padding: 30px 40px;`;
     }
   }}
-
-background-color: ${({ backgroundColor }) =>
-    backgroundColor ? backgroundColor : RenderaPalette.tan300};
+  background-color: ${({ variant }) =>
+    variant === "secondary" ? RenderaPalette.yellow100 : RenderaPalette.tan300};
 
   &:hover {
-    background-color: ${({ backgroundColor }) => {
-      if (!backgroundColor) {
-        return RenderaPalette.tan300 === RenderaPalette.brown400
-          ? RenderaPalette.tan300
-          : RenderaPalette.brown400;
-      }
-      return backgroundColor;
-    }};
+    background-color: ${({ variant }) =>
+      variant === "secondary"
+        ? RenderaPalette.tan300
+        : RenderaPalette.brown400};
+    ${HeadingBold} {
+      color: ${({ variant }) =>
+        variant === "secondary"
+          ? RenderaPalette.black1000
+          : RenderaPalette.white0};
+    }
   }
 `;
 
-export default function Button({
-  children,
-  color = RenderaPalette.white0,
-  ...props
-}: ButtonProps) {
+export default function Button({ children, ...props }: ButtonProps) {
   return (
-    <StyledButton color={color} {...props}>
-      <HeadingBold color={color}>{children}</HeadingBold>
+    <StyledButton {...props}>
+      <HeadingBold>{children}</HeadingBold>
     </StyledButton>
   );
 }

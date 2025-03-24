@@ -37,6 +37,17 @@ export const SubTitle = styled.h4<{ color?: string }>`
   color: ${(props) => props.color || RenderaPalette.black1000};
 `;
 
+export const MediumTitle = styled.p<{
+  color?: string;
+  fontFamily?: string;
+}>`
+  font-family: ${(props) => props.fontFamily || "Poppins, sans-serif"};
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 28px;
+  color: ${(props) => props.color || RenderaPalette.black1000};
+`;
+
 export const HeadingBold = styled.p<{ color?: string }>`
   font-family: Poppins, sans-serif;
   font-weight: 700;
