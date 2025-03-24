@@ -46,11 +46,38 @@ export const HeadingBold = styled.p<{ color?: string }>`
   color: ${(props) => props.color || RenderaPalette.black1000};
 `;
 
+export const HeadingBoldWithLineHeight = styled.p<{ color?: string }>`
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0px;
+  color: ${(props) => props.color || RenderaPalette.black1000};
+`;
+
+export const LargeNumber = styled.p<{ color?: string }>`
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  font-size: 36.5px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: ${(props) => props.color || RenderaPalette.black1000};
+`;
+
+export const HeadingLarge = styled.p<{ color?: string }>`
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: ${(props) => props.color || RenderaPalette.black1000};
+`;
+
 export const HeadingMedium = styled.p<{ color?: string }>`
   font-family: Poppins, sans-serif;
   font-weight: 600;
-  font-size: 32px;
-  line-height: 100%;
+  font-size: 20px;
+  line-height: 25px;
   letter-spacing: 0px;
   color: ${(props) => props.color || RenderaPalette.black1000};
 `;
@@ -135,6 +162,15 @@ export const SmallText = styled.p<{ color?: string }>`
   color: ${(props) => props.color || RenderaPalette.black1000};
 `;
 
+export const SmallTextWithLineHeight = styled.p<{ color?: string }>`
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.09px;
+  color: ${(props) => props.color || RenderaPalette.black1000};
+`;
+
 export const TinyText = styled.p<{ color?: string }>`
   font-family: Poppins, sans-serif;
   font-weight: 400;
@@ -144,6 +180,14 @@ export const TinyText = styled.p<{ color?: string }>`
   color: ${(props) => props.color || RenderaPalette.black1000};
 `;
 
+export const TinyLightText = styled.p<{ color?: string }>`
+  font-family: Poppins, sans-serif;
+  font-weight: 300;
+  font-size: 13.69px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: ${(props) => props.color || RenderaPalette.black1000};
+`;
 export const SmallLightText = styled.p<{ color?: string }>`
   font-family: Poppins, sans-serif;
   font-weight: 300;
