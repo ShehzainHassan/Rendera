@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { MediumText, SectionTitle } from "../../Typography";
-import ProductCard from "../ProductCard/ProductCard";
 import Button from "../Button/Button";
+import ProductCard from "../ProductCard/ProductCard";
+import TitleContainer from "../TitleContainer/TitleContainer";
 
 const Section = styled("section")`
   display: flex;
@@ -10,13 +10,7 @@ const Section = styled("section")`
   justify-content: center;
   gap: 40px;
 `;
-const TitleContainer = styled("div")`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-`;
+
 const CardContainer = styled("div")`
   display: flex;
   align-items: center;
@@ -27,13 +21,11 @@ const CardContainer = styled("div")`
 export default function Trending() {
   return (
     <Section>
-      <TitleContainer>
-        <SectionTitle>Trending Now</SectionTitle>
-        <MediumText>
-          Explore our best-selling collections, featuring exquisite designs for
-          every occasion.
-        </MediumText>
-      </TitleContainer>
+      <TitleContainer
+        title="Trending Now"
+        subTitle="Explore our best-selling collections, featuring exquisite designs for
+        every occasion."
+      />
       <CardContainer>
         <ProductCard
           imageUrl="/images/Ring.png"

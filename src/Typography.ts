@@ -117,6 +117,15 @@ export const ExtraLargeTextWithLineHeight = styled.p<{ color?: string }>`
   color: ${(props) => props.color || RenderaPalette.black1000};
 `;
 
+export const BigText = styled.p<{ color?: string }>`
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: -0.82px;
+  color: ${(props) => props.color || RenderaPalette.black1000};
+`;
+
 export const LargeText = styled.p<{ color?: string }>`
   font-family: Poppins, sans-serif;
   font-weight: 400;
@@ -168,6 +177,14 @@ export const SmallTextWithLineHeight = styled.p<{ color?: string }>`
   font-size: 14px;
   line-height: 22px;
   letter-spacing: 0.09px;
+  color: ${(props) => props.color || RenderaPalette.black1000};
+`;
+export const SmallTextSpaced = styled.p<{ color?: string }>`
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
   color: ${(props) => props.color || RenderaPalette.black1000};
 `;
 
