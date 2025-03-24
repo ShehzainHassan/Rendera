@@ -6,12 +6,12 @@ import Button from "../Button/Button";
 const Section = styled("section")`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   gap: 40px;
 `;
 const ReviewsContainer = styled("div")`
   display: flex;
+  justify-content: center;
   gap: 24px;
 `;
 export default function Reviews() {

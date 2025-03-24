@@ -7,6 +7,7 @@ export const RenderaPalette = {
   brown400: "#2E1B26",
   gray500: "#B5B5B5",
   gray600: "#8C8C8C",
+  gray625: "#7E7E7E",
   gray650: "#747474",
   gray700: "#555555",
   gray800: "#4F4F4F",
