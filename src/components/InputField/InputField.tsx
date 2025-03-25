@@ -21,10 +21,19 @@ const StyledInput = styled.input`
   }
 `;
 
-export default function InputField() {
+interface InputFieldProps {
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+export default function InputField({ value, onChange }: InputFieldProps) {
   return (
     <Container>
-      <StyledInput type="text" placeholder="Your email address" />
+      <StyledInput
+        type="text"
+        placeholder="Your email address"
+        value={value}
+        onChange={onChange}
+      />
     </Container>
   );
 }

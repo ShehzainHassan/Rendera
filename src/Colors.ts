@@ -18,4 +18,7 @@ export const RenderaPalette = {
   peach100: "#F6D4B4",
   yellow50: "#e9c771",
   yellow100: "#e9c871",
+  yellow200: "#a1a60a",
+  green500: "#388E3C",
+  red500: "#D32F2F",
 };

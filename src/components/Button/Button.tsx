@@ -7,6 +7,8 @@ interface ButtonProps {
   size?: "small" | "medium" | "large";
   color?: string;
   alignSelf?: "left" | "center" | "right";
+  onClick?: () => void;
+  isDisabled?: boolean;
   children: ReactNode;
 }
 
@@ -67,6 +69,13 @@ const StyledButton = styled.button<ButtonProps>`
           : RenderaPalette.white0};
     }
   }
+  ${({ isDisabled }) =>
+    isDisabled &&
+    `
+    cursor: not-allowed;
+    opacity: 0.5;
+    pointer-events: none;
+  `}
 `;
 
 export default function Button({
@@ -74,10 +83,18 @@ export default function Button({
   variant,
   color = RenderaPalette.white0,
   size,
+  onClick,
+  isDisabled = false,
   ...props
 }: ButtonProps) {
   return (
-    <StyledButton variant={variant} size={size} color={color} {...props}>
+    <StyledButton
+      variant={variant}
+      size={size}
+      color={color}
+      onClick={onClick}
+      isDisabled={isDisabled}
+      {...props}>
       {size === "small" ? (
         <HeadingLightSmall color={color}>{children}</HeadingLightSmall>
       ) : (

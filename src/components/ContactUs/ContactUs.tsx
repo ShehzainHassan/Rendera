@@ -4,6 +4,9 @@ import TitleContainer from "../TitleContainer/TitleContainer";
 import InputField from "../InputField/InputField";
 import Button from "../Button/Button";
 import { HeadingSmall, MediumText } from "../../Typography";
+import { toast, ToastContainer } from "react-toastify";
+import { useState } from "react";
+import axios from "axios";
 
 const Section = styled("section")`
   display: flex;
@@ -33,8 +36,90 @@ const SubContainer1 = styled("div")`
   gap: 32px;
 `;
 export default function ContactUs() {
+  const [email, setEmail] = useState("");
+  const toastOptions = {
+    position: "bottom-center",
+    autoClose: 3000,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "dark",
+  };
+
+  const showWarning = () => {
+    toast.warn("Email already subscribed!", {
+      ...toastOptions,
+      position: "bottom-center",
+      style: {
+        backgroundColor: RenderaPalette.yellow200,
+        color: RenderaPalette.black1000,
+      },
+    });
+  };
+  const showGeneralError = () => {
+    toast.error("Something went wrong. Please try again later.", {
+      ...toastOptions,
+      position: "bottom-center",
+      style: {
+        backgroundColor: RenderaPalette.red500,
+        color: RenderaPalette.white0,
+      },
+    });
+  };
+  const showError = () => {
+    toast.error("Please enter a valid email!", {
+      ...toastOptions,
+      position: "bottom-center",
+      style: {
+        backgroundColor: RenderaPalette.red500,
+        color: RenderaPalette.white0,
+      },
+    });
+  };
+
+  const showSuccess = () => {
+    toast.success("Subscription successful!", {
+      ...toastOptions,
+      position: "bottom-center",
+      style: {
+        backgroundColor: RenderaPalette.green500,
+        color: RenderaPalette.white0,
+      },
+    });
+  };
+  const isValidEmail = (email: string) => {
+    return /\S+@\S+\.\S+/.test(email);
+  };
+  const saveEmail = async () => {
+    try {
+      const response = await axios.post("http://localhost:3000/subscribe", {
+        email,
+      });
+
+      if (response.status === 200) {
+        showSuccess();
+        setEmail("");
+      }
+    } catch (err: any) {
+      if (err.response && err.response.status === 409) {
+        showWarning();
+      } else {
+        showGeneralError();
+      }
+    }
+  };
+
+  const handleSubscribe = () => {
+    if (!isValidEmail(email)) {
+      showError();
+      return;
+    }
+    saveEmail();
+  };
   return (
     <Section>
+      <ToastContainer />
       <SubContainer1>
         <TitleContainer
           title="Stay Inspired"
@@ -45,8 +130,15 @@ export default function ContactUs() {
           subTitleColor={RenderaPalette.white100}
         />
         <InputContainer>
-          <InputField />
-          <Button variant="secondary" color={RenderaPalette.black1000}>
+          <InputField
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Button
+            onClick={handleSubscribe}
+            variant="secondary"
+            isDisabled={!email.trim()}
+            color={RenderaPalette.black1000}>
             Subscribe
           </Button>
         </InputContainer>
