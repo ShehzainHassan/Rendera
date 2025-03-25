@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { RenderaPalette } from "../../Colors";
 import { ReactNode } from "react";
-import { HeadingBold } from "../../Typography";
+import { HeadingBold, HeadingLightSmall } from "../../Typography";
 interface ButtonProps {
   variant?: "primary" | "secondary";
   size?: "small" | "medium" | "large";
@@ -69,10 +69,20 @@ const StyledButton = styled.button<ButtonProps>`
   }
 `;
 
-export default function Button({ children, ...props }: ButtonProps) {
+export default function Button({
+  children,
+  variant,
+  color = RenderaPalette.white0,
+  size,
+  ...props
+}: ButtonProps) {
   return (
-    <StyledButton {...props}>
-      <HeadingBold>{children}</HeadingBold>
+    <StyledButton variant={variant} size={size} color={color} {...props}>
+      {size === "small" ? (
+        <HeadingLightSmall color={color}>{children}</HeadingLightSmall>
+      ) : (
+        <HeadingBold color={color}>{children}</HeadingBold>
+      )}
     </StyledButton>
   );
 }

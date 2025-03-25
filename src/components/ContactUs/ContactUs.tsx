@@ -40,16 +40,13 @@ export default function ContactUs() {
           title="Stay Inspired"
           titleSize="medium"
           subTitle="Subscribe to our newsletter for exclusive designs, special offers, and insights into the world of fine jewelry."
+          subTitleAlignment="center"
           titleColor={RenderaPalette.white0}
           subTitleColor={RenderaPalette.white100}
         />
         <InputContainer>
           <InputField />
-          <Button
-            variant="secondary"
-            // color={RenderaPalette.black1000}
-            // backgroundColor={RenderaPalette.yellow100}
-          >
+          <Button variant="secondary" color={RenderaPalette.black1000}>
             Subscribe
           </Button>
         </InputContainer>

@@ -3,6 +3,7 @@ import { HeroTitle } from '../../Typography';
 import Navbar from '../Navbar/Navbar';
 import Button from '../Button/Button';
 import { RenderaPalette } from '../../Colors';
+
 const Main = styled('main')`
   display: flex;
   flex-direction: column;

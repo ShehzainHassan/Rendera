@@ -8,6 +8,9 @@ const Section = styled("section")`
   align-items: center;
   justify-content: center;
   gap: 110px;
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
 `;
 const Article = styled("article")`
   display: flex;
@@ -26,6 +29,14 @@ const SectionTitleContainer = styled("div")`
   display: flex;
   flex-direction: column;
   gap: 16px;
+`;
+const Image = styled("img")`
+  width: 590px;
+  height: 480px;
+  @media (max-width: 768px) {
+    width: 390px;
+    height: 317px;
+  }
 `;
 export default function AboutUs() {
   return (
@@ -50,7 +61,7 @@ export default function AboutUs() {
         <Button alignSelf="left">Learn More</Button>
       </Article>
       <ImageContainer>
-        <img src="/images/about-us.png" alt="about" width={590} height={480} />
+        <Image src="/images/about-us.png" alt="about" />
       </ImageContainer>
     </Section>
   );
