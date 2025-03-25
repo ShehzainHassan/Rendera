@@ -48,7 +48,7 @@ export const MediumTitle = styled.p<{
   color: ${(props) => props.color || RenderaPalette.black1000};
 `;
 
-export const HeadingBold = styled.p<{ color?: string }>`
+export const HeadingBold = styled.p<{ color?: string; lineHeight?: string }>`
   font-family: Poppins, sans-serif;
   font-weight: 700;
   font-size: 16px;
@@ -149,13 +149,14 @@ export const LargeText = styled.p<{ color?: string }>`
   color: ${(props) => props.color || RenderaPalette.black1000};
 `;
 
-export const MediumText = styled.p<{ color?: string }>`
+export const MediumText = styled.p<{ color?: string; textAlign?: string }>`
   font-family: Poppins, sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 100%;
   letter-spacing: 0.1px;
   color: ${(props) => props.color || RenderaPalette.black1000};
+  text-align: ${(props) => props.textAlign || "left"};
 `;
 
 export const MediumTextWithLineHeight = styled.p<{ color?: string }>`

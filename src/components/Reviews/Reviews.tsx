@@ -20,6 +20,7 @@ export default function Reviews() {
       <TitleContainer
         title="What our clients say"
         subTitle="Stories from clients who have made Rendera jewelry part of their most meaningful moments."
+        subTitleAlignment="center"
       />
       <ReviewsContainer>
         <ClientCard

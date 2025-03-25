@@ -25,6 +25,7 @@ export default function Trending() {
         title="Trending Now"
         subTitle="Explore our best-selling collections, featuring exquisite designs for
         every occasion."
+        subTitleAlignment="center"
       />
       <CardContainer>
         <ProductCard

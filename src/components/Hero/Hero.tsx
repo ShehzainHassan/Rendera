@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { HeadingBold, HeroTitle } from "../../Typography";
-import Navbar from "../Navbar/Navbar";
-import Button from "../Button/Button";
 import { RenderaPalette } from "../../Colors";
+import { HeroTitle } from "../../Typography";
+import Button from "../Button/Button";
+import Navbar from "../Navbar/Navbar";
 const Main = styled("main")`
   display: flex;
   flex-direction: column;
