@@ -149,7 +149,11 @@ export const LargeText = styled.p<{ color?: string }>`
   color: ${(props) => props.color || RenderaPalette.black1000};
 `;
 
-export const MediumText = styled.p<{ color?: string; textAlign?: string }>`
+export const MediumText = styled.p<{
+  color?: string;
+  textAlign?: string;
+  maxWidth?: string;
+}>`
   font-family: Poppins, sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -157,6 +161,7 @@ export const MediumText = styled.p<{ color?: string; textAlign?: string }>`
   letter-spacing: 0.1px;
   color: ${(props) => props.color || RenderaPalette.black1000};
   text-align: ${(props) => props.textAlign || "left"};
+  ${(props) => props.maxWidth && `max-width: ${props.maxWidth};`}
 `;
 
 export const MediumTextWithLineHeight = styled.p<{ color?: string }>`

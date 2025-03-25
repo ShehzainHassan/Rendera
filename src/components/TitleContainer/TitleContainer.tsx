@@ -9,8 +9,6 @@ const Container = styled.div<{ alignment: "left" | "middle" }>`
   align-items: ${({ alignment }) =>
     alignment === "left" ? "flex-start" : "center"};
   gap: 16px;
-  max-width: 650px;
-  margin: 0 auto;
 `;
 
 interface TitleContainerProps {
@@ -40,7 +38,10 @@ export default function TitleContainer({
         <SubTitle color={titleColor}>{title}</SubTitle>
       )}
 
-      <MediumText color={subTitleColor} textAlign={subTitleAlignment}>
+      <MediumText
+        maxWidth="650px"
+        color={subTitleColor}
+        textAlign={subTitleAlignment}>
         {subTitle}
       </MediumText>
     </Container>
