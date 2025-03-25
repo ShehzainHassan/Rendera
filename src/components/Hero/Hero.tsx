@@ -1,21 +1,21 @@
-import styled from "styled-components";
-import { HeadingBold, HeroTitle } from "../../Typography";
-import Navbar from "../Navbar/Navbar";
-import Button from "../Button/Button";
-import { RenderaPalette } from "../../Colors";
-const Main = styled("main")`
+import styled from 'styled-components';
+import { HeroTitle } from '../../Typography';
+import Navbar from '../Navbar/Navbar';
+import Button from '../Button/Button';
+import { RenderaPalette } from '../../Colors';
+const Main = styled('main')`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 94px;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("/images/hero.png");
+    url('/images/hero.png');
   width: 100%;
   height: 725px;
   background-size: cover;
   background-position: center;
 `;
-const ImageContainer = styled("figure")`
+const ImageContainer = styled('figure')`
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -23,7 +23,7 @@ const ImageContainer = styled("figure")`
   align-items: center;
   padding: 30px;
 `;
-const SubContainer = styled("div")`
+const SubContainer = styled('div')`
   display: flex;
   flex-direction: column;
   justify-content: center;
