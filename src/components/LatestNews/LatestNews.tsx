@@ -11,6 +11,10 @@ const Section = styled("section")`
 const NewsContainer = styled("div")`
   display: flex;
   gap: 34px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 export default function LatestNews() {
   return (

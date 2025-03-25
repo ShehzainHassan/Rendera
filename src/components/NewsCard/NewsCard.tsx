@@ -1,10 +1,6 @@
 import styled from "styled-components";
 import { RenderaPalette } from "../../Colors";
-import {
-  ExtraLargeTextWithLineHeight,
-  MediumTextWithLineHeight,
-  TinyText,
-} from "../../Typography";
+import { BodyText, ExtraLargeText, MediumText } from "../../Typography";
 import Button from "../Button/Button";
 
 const Container = styled("div")`
@@ -12,8 +8,8 @@ const Container = styled("div")`
   flex-direction: column;
   border-radius: 20px;
   background-color: ${RenderaPalette.beige300};
-  width: 375px;
-  height: 460px;
+  width: 100%;
+  height: auto;
 `;
 const Image = styled.img`
   width: 100%;
@@ -45,13 +41,15 @@ export default function NewsCard({
     <Container>
       <Image src={imgSrc} alt="image" />
       <DescriptionContainer>
-        <TinyText>{date}</TinyText>
-        <ExtraLargeTextWithLineHeight fontFamily="Bellefair">
+        <BodyText fontSize="12px" lineHeight="20px">
+          {date}
+        </BodyText>
+        <ExtraLargeText lineHeight="28px" fontFamily="Bellefair">
           {title}
-        </ExtraLargeTextWithLineHeight>
-        <MediumTextWithLineHeight color={RenderaPalette.gray625}>
+        </ExtraLargeText>
+        <MediumText lineHeight="24px" color={RenderaPalette.gray625}>
           {description}
-        </MediumTextWithLineHeight>
+        </MediumText>
         <Button size="small" alignSelf="left">
           {btnText}
         </Button>

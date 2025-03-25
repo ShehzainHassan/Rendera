@@ -1,14 +1,6 @@
 import styled from "styled-components";
 import { RenderaPalette } from "../../Colors";
-import {
-  HeadingLarge,
-  HeadingMedium,
-  LargeNumber,
-  MediumTextWithLineHeight,
-  SmallLightText,
-  SmallTextWithLineHeight,
-  TinyLightText,
-} from "../../Typography";
+import { BodyText, HeadingLarge, LargeNumber } from "../../Typography";
 
 interface ProductCardProps {
   cardType?: "medium" | "large";
@@ -73,20 +65,28 @@ export default function ProductCard({
       />
       <DetailsContainer>
         {cardType === "medium" ? (
-          <HeadingMedium>{title}</HeadingMedium>
+          <HeadingLarge>{title}</HeadingLarge>
         ) : (
           <HeadingLarge>{title}</HeadingLarge>
         )}
 
         <DescriptionContainer cardType={cardType}>
           {cardType === "medium" ? (
-            <SmallTextWithLineHeight color={RenderaPalette.gray650}>
+            <BodyText
+              fontSize="14px"
+              lineHeight="22px"
+              letterSpacing="0.09px"
+              color={RenderaPalette.gray650}>
               {description}
-            </SmallTextWithLineHeight>
+            </BodyText>
           ) : (
-            <MediumTextWithLineHeight color={RenderaPalette.gray650}>
+            <BodyText
+              fontSize="16px"
+              lineHeight="28px"
+              letterSpacing="0.11px"
+              color={RenderaPalette.gray650}>
               {description}
-            </MediumTextWithLineHeight>
+            </BodyText>
           )}
 
           {cardType === "medium" ? (
@@ -101,9 +101,13 @@ export default function ProductCard({
               <img src="/images/star.png" alt="star" width={18} height={18} />
             )}
             {cardType === "medium" ? (
-              <SmallLightText>{rating}</SmallLightText>
+              <BodyText fontWeight={300} fontSize="12px">
+                {rating}
+              </BodyText>
             ) : (
-              <TinyLightText>{rating}</TinyLightText>
+              <BodyText fontWeight={300} fontSize="13.69px">
+                {rating}
+              </BodyText>
             )}
           </RatingContainer>
         </DescriptionContainer>

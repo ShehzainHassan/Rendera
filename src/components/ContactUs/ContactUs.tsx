@@ -22,6 +22,9 @@ const InputContainer = styled("div")`
   align-items: center;
   justify-content: center;
   gap: 16px;
+  @media (max-width: 768px) {
+    gap: 8px;
+  }
 `;
 const TextContainer = styled("div")`
   display: flex;
@@ -148,7 +151,7 @@ export default function ContactUs() {
         <HeadingSmall color={RenderaPalette.white0}>
           Join our community and receive 10% off your first order.
         </HeadingSmall>
-        <MediumText color={RenderaPalette.white100}>
+        <MediumText lineHeight="28px" color={RenderaPalette.white100}>
           By subscribing, you agree to our Privacy Policy and consent to receive
           updates from Rendera
         </MediumText>

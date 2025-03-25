@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { RenderaPalette } from "../../Colors";
-import { MediumTitle, SmallTextWithLineHeight } from "../../Typography";
+import { BodyText, MediumTitle } from "../../Typography";
 import Navbar from "../Navbar/Navbar";
 
 const FooterContainer = styled("footer")`
@@ -40,12 +40,21 @@ const Spacer = styled("hr")`
 const PolicyServiceContainer = styled("div")`
   display: flex;
   gap: 43px;
+
+  @media (max-width: 768px) {
+    justify-content: space-between;
+  }
 `;
 const TextContainer = styled("div")`
   display: flex;
-  align-items: center;
   justify-content: space-between;
   padding: 0 10px;
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 72px;
+  }
 `;
 const ImageContainer = styled("figure")`
   display: flex;
@@ -64,7 +73,7 @@ export default function Footer() {
         <NavContainer>
           <MediumTitle color={RenderaPalette.white0}>Quick Links</MediumTitle>
           <Spacer />
-          <Navbar />
+          <Navbar mobileFooter={true} />
         </NavContainer>
 
         <IconContainer>
@@ -79,16 +88,28 @@ export default function Footer() {
 
       <Spacer />
       <TextContainer>
-        <SmallTextWithLineHeight color={RenderaPalette.white0}>
+        <BodyText
+          fontSize="14px"
+          lineHeight="22px"
+          letterSpacing="0.09px"
+          color={RenderaPalette.white0}>
           © 2025 Rendera Jewelry. All rights reserved
-        </SmallTextWithLineHeight>
+        </BodyText>
         <PolicyServiceContainer>
-          <SmallTextWithLineHeight color={RenderaPalette.white0}>
+          <BodyText
+            fontSize="14px"
+            lineHeight="22px"
+            letterSpacing="0.09px"
+            color={RenderaPalette.white0}>
             Privacy Policy
-          </SmallTextWithLineHeight>
-          <SmallTextWithLineHeight color={RenderaPalette.white0}>
+          </BodyText>
+          <BodyText
+            fontSize="14px"
+            lineHeight="22px"
+            letterSpacing="0.09px"
+            color={RenderaPalette.white0}>
             Terms of Service
-          </SmallTextWithLineHeight>
+          </BodyText>
         </PolicyServiceContainer>
       </TextContainer>
     </FooterContainer>

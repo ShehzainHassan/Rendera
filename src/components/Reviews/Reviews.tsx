@@ -13,6 +13,11 @@ const ReviewsContainer = styled("div")`
   display: flex;
   justify-content: center;
   gap: 24px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 export default function Reviews() {
   return (

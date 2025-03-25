@@ -1,34 +1,44 @@
 import styled from "styled-components";
-import { HeadingLightSmall } from "../../Typography";
 import { RenderaPalette } from "../../Colors";
+import { HeadingLightSmall } from "../../Typography";
 
-const NavbarContainer = styled("nav")`
+const NavbarContainer = styled.nav`
   display: flex;
   gap: 30px;
+  position: relative;
 `;
-const NavList = styled("ul")`
-  display: flex;
+
+const NavList = styled.ul<{ mobileFooter: boolean }>`
+  display: ${({ mobileFooter }) => (mobileFooter ? "flex" : "none")};
   gap: 50px;
   list-style: none;
   margin: 0;
   padding: 0;
-`;
 
-const NavItem = styled("li")`
-  display: flex;
-  cursor: pointer;
-  &:hover ${HeadingLightSmall} {
-    font-weight: 800;
-    font-size: 16px;
-    color: ${RenderaPalette.peach100};
-    line-height: 100%;
-    letter-spacing: 0;
+  @media (max-width: 768px) {
+    ${({ mobileFooter }) =>
+      mobileFooter &&
+      `
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    `}
   }
 `;
-export default function Navbar() {
+
+const NavItem = styled.li`
+  display: flex;
+  cursor: pointer;
+`;
+
+interface NavBarProps {
+  mobileFooter?: boolean;
+}
+
+export default function Navbar({ mobileFooter = false }: NavBarProps) {
   return (
     <NavbarContainer>
-      <NavList>
+      <NavList mobileFooter={mobileFooter}>
         <NavItem>
           <HeadingLightSmall color={RenderaPalette.white0}>
             Home

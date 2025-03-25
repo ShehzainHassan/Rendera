@@ -1,18 +1,11 @@
 import styled from "styled-components";
 import { RenderaPalette } from "../../Colors";
-import {
-  ExtraLargeText,
-  BigText,
-  SmallTextSpaced,
-  TinyText,
-} from "../../Typography";
+import { BodyText, ExtraLargeText } from "../../Typography";
 
-const CardContainer = styled.div<{ cardType: "big" | "medium" }>`
+const CardContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: ${({ cardType }) => (cardType === "medium" ? "384px" : "470px")};
-  height: ${({ cardType }) => (cardType === "medium" ? "184px" : "224px")};
   background-color: ${RenderaPalette.beige100};
   border-radius: 30px;
   padding: 20px 40px;
@@ -61,16 +54,27 @@ export default function ClientCard({
   cardType = "big",
 }: ClientCardProps) {
   return (
-    <CardContainer cardType={cardType}>
+    <CardContainer>
       <SubContainer>
         <ImageContainer cardType={cardType}>
           <img src={imgSrc} alt="pic" />
         </ImageContainer>
         <ReviewContainer>
           {cardType === "medium" ? (
-            <BigText>{name}</BigText>
+            <ExtraLargeText
+              fontSize="20px"
+              letterSpacing="-0.82px"
+              fontFamily="Bellefair">
+              {name}
+            </ExtraLargeText>
           ) : (
-            <ExtraLargeText>{name}</ExtraLargeText>
+            <ExtraLargeText
+              fontSize="24px"
+              lineHeight="100%"
+              letterSpacing="-1px"
+              fontFamily="Bellefair">
+              {name}
+            </ExtraLargeText>
           )}
           <Ratings cardType={cardType}>
             <img src="/images/rating.png" alt="star" />
@@ -80,11 +84,20 @@ export default function ClientCard({
             <img src="/images/rating.png" alt="star" />
           </Ratings>
           {cardType === "medium" ? (
-            <TinyText color={RenderaPalette.gray800}>{review}</TinyText>
-          ) : (
-            <SmallTextSpaced color={RenderaPalette.gray800}>
+            <BodyText
+              fontSize="12px"
+              lineHeight="20px"
+              color={RenderaPalette.gray800}>
               {review}
-            </SmallTextSpaced>
+            </BodyText>
+          ) : (
+            <BodyText
+              fontSize="14px"
+              lineHeight="24px"
+              letterSpacing="0.1px"
+              color={RenderaPalette.gray800}>
+              {review}
+            </BodyText>
           )}
         </ReviewContainer>
       </SubContainer>

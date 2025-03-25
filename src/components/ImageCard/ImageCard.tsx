@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { RenderaPalette } from "../../Colors";
-import { HeadingBoldWithLineHeight } from "../../Typography";
+import { HeadingBold } from "../../Typography";
 
 const Container = styled("div")`
   display: flex;
   flex-direction: column;
   border-radius: 20px;
-  width: 280px;
+
   position: relative;
 `;
 const TextContainer = styled("div")`
@@ -22,14 +22,18 @@ const TextContainer = styled("div")`
   padding: 20px 0;
   bottom: 0;
 `;
+const Image = styled("img")`
+  width: 100%;
+  height: auto;
+`;
 export default function ImageCard() {
   return (
     <Container>
-      <img src="/images/Earrings.png" alt="earring" />
+      <Image src="/images/Earrings.png" alt="earring" />
       <TextContainer>
-        <HeadingBoldWithLineHeight color={RenderaPalette.black1000}>
+        <HeadingBold lineHeight="28px" color={RenderaPalette.black1000}>
           Earrings
-        </HeadingBoldWithLineHeight>
+        </HeadingBold>
       </TextContainer>
     </Container>
   );
