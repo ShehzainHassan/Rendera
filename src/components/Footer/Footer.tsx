@@ -73,7 +73,7 @@ export default function Footer() {
         <NavContainer>
           <MediumTitle color={RenderaPalette.white0}>Quick Links</MediumTitle>
           <Spacer />
-          <Navbar mobileFooter={true} />
+          <Navbar $showNav={true} />
         </NavContainer>
 
         <IconContainer>
@@ -90,7 +90,7 @@ export default function Footer() {
       <TextContainer>
         <BodyText
           fontSize="14px"
-          lineHeight="22px"
+          $lineHeight="22px"
           letterSpacing="0.09px"
           color={RenderaPalette.white0}>
           © 2025 Rendera Jewelry. All rights reserved
@@ -98,14 +98,14 @@ export default function Footer() {
         <PolicyServiceContainer>
           <BodyText
             fontSize="14px"
-            lineHeight="22px"
+            $lineHeight="22px"
             letterSpacing="0.09px"
             color={RenderaPalette.white0}>
             Privacy Policy
           </BodyText>
           <BodyText
             fontSize="14px"
-            lineHeight="22px"
+            $lineHeight="22px"
             letterSpacing="0.09px"
             color={RenderaPalette.white0}>
             Terms of Service

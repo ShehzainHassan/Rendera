@@ -139,8 +139,8 @@ export default function ContactUs() {
           />
           <Button
             onClick={handleSubscribe}
-            variant="secondary"
-            isDisabled={!email.trim()}
+            $variant="secondary"
+            $isDisabled={!email.trim()}
             color={RenderaPalette.black1000}>
             Subscribe
           </Button>
@@ -151,7 +151,7 @@ export default function ContactUs() {
         <HeadingSmall color={RenderaPalette.white0}>
           Join our community and receive 10% off your first order.
         </HeadingSmall>
-        <MediumText lineHeight="28px" color={RenderaPalette.white100}>
+        <MediumText $lineHeight="28px" color={RenderaPalette.white100}>
           By subscribing, you agree to our Privacy Policy and consent to receive
           updates from Rendera
         </MediumText>

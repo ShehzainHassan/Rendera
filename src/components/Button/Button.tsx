@@ -3,19 +3,21 @@ import { RenderaPalette } from "../../Colors";
 import { ReactNode } from "react";
 import { HeadingBold, HeadingLightSmall } from "../../Typography";
 interface ButtonProps {
-  variant?: "primary" | "secondary";
+  $variant?: "primary" | "secondary";
   size?: "small" | "medium" | "large";
   color?: string;
-  alignSelf?: "left" | "center" | "right";
+  $alignSelf?: "left" | "center" | "right";
   onClick?: () => void;
-  isDisabled?: boolean;
+  $isDisabled?: boolean;
   children: ReactNode;
 }
 
 const StyledButton = styled.button<ButtonProps>`
   display: flex;
-  align-self: ${({ alignSelf = "center" }) => {
-    switch (alignSelf) {
+  align-items: center;
+  justify-content: center;
+  align-self: ${({ $alignSelf = "center" }) => {
+    switch ($alignSelf) {
       case "left":
         return "flex-start";
       case "right":
@@ -26,14 +28,16 @@ const StyledButton = styled.button<ButtonProps>`
   }};
   font-family: Poppins, sans-serif;
   border: none;
+  ${({ $variant }) => $variant === "secondary" && `height: 62px;`}
+
   cursor: pointer;
   transition: all 0.3s ease;
 
-  ${({ variant }) =>
-    variant === "secondary" ? `border-radius: 16px;` : `border-radius: 62px;`}
+  ${({ $variant }) =>
+    $variant === "secondary" ? `border-radius: 16px;` : `border-radius: 62px;`}
 
-  ${({ variant = "primary", size = "medium" }) => {
-    switch (variant) {
+  ${({ $variant = "primary", size = "medium" }) => {
+    switch ($variant) {
       case "primary":
         switch (size) {
           case "small":
@@ -54,23 +58,25 @@ const StyledButton = styled.button<ButtonProps>`
         return `border-radius: 62px; padding: 30px 40px;`;
     }
   }}
-  background-color: ${({ variant }) =>
-    variant === "secondary" ? RenderaPalette.yellow100 : RenderaPalette.tan300};
+  background-color: ${({ $variant }) =>
+    $variant === "secondary"
+      ? RenderaPalette.yellow100
+      : RenderaPalette.tan300};
 
   &:hover {
-    background-color: ${({ variant }) =>
-      variant === "secondary"
+    background-color: ${({ $variant }) =>
+      $variant === "secondary"
         ? RenderaPalette.tan300
         : RenderaPalette.brown400};
     ${HeadingBold} {
-      color: ${({ variant }) =>
-        variant === "secondary"
+      color: ${({ $variant }) =>
+        $variant === "secondary"
           ? RenderaPalette.black1000
           : RenderaPalette.white0};
     }
   }
-  ${({ isDisabled }) =>
-    isDisabled &&
+  ${({ $isDisabled }) =>
+    $isDisabled &&
     `
     cursor: not-allowed;
     opacity: 0.5;
@@ -80,20 +86,20 @@ const StyledButton = styled.button<ButtonProps>`
 
 export default function Button({
   children,
-  variant,
+  $variant,
   color = RenderaPalette.white0,
   size,
   onClick,
-  isDisabled = false,
+  $isDisabled = false,
   ...props
 }: ButtonProps) {
   return (
     <StyledButton
-      variant={variant}
+      $variant={$variant}
       size={size}
       color={color}
       onClick={onClick}
-      isDisabled={isDisabled}
+      $isDisabled={$isDisabled}
       {...props}>
       {size === "small" ? (
         <HeadingLightSmall color={color}>{children}</HeadingLightSmall>

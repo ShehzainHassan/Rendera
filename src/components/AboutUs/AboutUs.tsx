@@ -41,16 +41,19 @@ export default function AboutUs() {
     <Section>
       <Article>
         <SectionTitleContainer>
-          <HeroTitle letterSpacing="-2px" fontSize="56px" mobileFontSize="36px">
+          <HeroTitle
+            letterSpacing="-2px"
+            fontSize="56px"
+            $mobileFontSize="36px">
             About Rendera
           </HeroTitle>
           <TextContainer>
-            <MediumText lineHeight="28px" color={RenderaPalette.gray700}>
+            <MediumText $lineHeight="28px" color={RenderaPalette.gray700}>
               At Rendera, we believe in luxury, empowerment, and craftsmanship.
               Our designs are made to inspire and transform, creating timeless
               pieces for the modern individual.
             </MediumText>
-            <MediumText lineHeight="28px" color={RenderaPalette.gray700}>
+            <MediumText $lineHeight="28px" color={RenderaPalette.gray700}>
               Each piece tells a story of elegance and sophistication, carefully
               crafted with attention to detail and a commitment to excellence
               that defines our brand.
@@ -58,7 +61,7 @@ export default function AboutUs() {
           </TextContainer>
         </SectionTitleContainer>
 
-        <Button alignSelf="left">Learn More</Button>
+        <Button $alignSelf="left">Learn More</Button>
       </Article>
       <ImageContainer>
         <Image src="/images/about-us.png" alt="about" />

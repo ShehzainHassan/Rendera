@@ -15,8 +15,7 @@ const ReviewsContainer = styled("div")`
   gap: 24px;
 
   @media (max-width: 768px) {
-    flex-direction: column;
-    justify-content: center;
+    display: none;
   }
 `;
 export default function Reviews() {
@@ -43,21 +42,21 @@ export default function Reviews() {
       </ReviewsContainer>
       <ReviewsContainer>
         <ClientCard
-          cardType="medium"
+          $cardType="medium"
           imgSrc="/images/client-2.png"
           name="Angelina Alex"
           review="The craftsmanship of my engagement ring exceeded all expectations.
                 It's become a treasured heirloom that I'll pass down for generations."
         />
         <ClientCard
-          cardType="medium"
+          $cardType="medium"
           imgSrc="/images/client-2.png"
           name="Angelina Alex"
           review="The craftsmanship of my engagement ring exceeded all expectations.
                 It's become a treasured heirloom that I'll pass down for generations."
         />
         <ClientCard
-          cardType="medium"
+          $cardType="medium"
           imgSrc="/images/client-2.png"
           name="Angelina Alex"
           review="The craftsmanship of my engagement ring exceeded all expectations.

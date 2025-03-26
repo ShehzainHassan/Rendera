@@ -31,7 +31,7 @@ export default function ImageCard() {
     <Container>
       <Image src="/images/Earrings.png" alt="earring" />
       <TextContainer>
-        <HeadingBold lineHeight="28px" color={RenderaPalette.black1000}>
+        <HeadingBold $lineHeight="28px" color={RenderaPalette.black1000}>
           Earrings
         </HeadingBold>
       </TextContainer>

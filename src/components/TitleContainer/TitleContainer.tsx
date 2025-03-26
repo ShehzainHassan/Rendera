@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { RenderaPalette } from "../../Colors";
 import { HeroTitle, MediumText } from "../../Typography";
 
-const Container = styled.div<{ alignment: "left" | "middle" }>`
+const Container = styled.div<{ $alignment: "left" | "middle" }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: ${({ alignment }) =>
-    alignment === "left" ? "flex-start" : "center"};
+  align-items: ${({ $alignment }) =>
+    $alignment === "left" ? "flex-start" : "center"};
   gap: 16px;
 `;
 
@@ -16,42 +16,42 @@ interface TitleContainerProps {
   titleSize?: "medium" | "large";
   subTitle: string;
   subTitleAlignment?: string;
-  alignment?: "left" | "middle";
+  $alignment?: "left" | "middle";
   titleColor?: string;
   subTitleColor?: string;
-  maxWidth?: string;
-  mobileMaxWidth?: string;
-  mobileLineHeight?: string;
-  mobileFontSize?: string;
+  $maxWidth?: string;
+  $mobilemaxWidth?: string;
+  $mobile$lineHeight?: string;
+  $mobileFontSize?: string;
 }
 
 export default function TitleContainer({
   title,
   subTitle,
   subTitleAlignment = "left",
-  alignment = "middle",
+  $alignment = "middle",
   titleColor = RenderaPalette.black950,
   subTitleColor = RenderaPalette.gray700,
   titleSize = "large",
-  maxWidth = "650px",
-  mobileFontSize = "36px",
-  mobileMaxWidth = "390px",
-  mobileLineHeight = "28px",
+  $maxWidth = "650px",
+  $mobileFontSize = "36px",
+  $mobilemaxWidth = "390px",
+  $mobile$lineHeight = "28px",
 }: TitleContainerProps) {
   return (
-    <Container alignment={alignment}>
+    <Container $alignment={$alignment}>
       {titleSize === "large" ? (
         <HeroTitle
           letterSpacing="-2px"
           fontSize="56px"
-          mobileFontSize={mobileFontSize}
+          $mobileFontSize={$mobileFontSize}
           color={titleColor}>
           {title}
         </HeroTitle>
       ) : (
         <HeroTitle
           fontSize="42px"
-          mobileFontSize={mobileFontSize}
+          $mobileFontSize={$mobileFontSize}
           letterSpacing="-2px"
           color={titleColor}>
           {title}
@@ -59,12 +59,12 @@ export default function TitleContainer({
       )}
 
       <MediumText
-        lineHeight={mobileLineHeight}
-        mobileMaxWidth={mobileMaxWidth}
-        mobileLineHeight={mobileLineHeight}
-        maxWidth={maxWidth}
+        $lineHeight={$mobile$lineHeight}
+        $mobilemaxWidth={$mobilemaxWidth}
+        $mobile$lineHeight={$mobile$lineHeight}
+        $maxWidth={$maxWidth}
         color={subTitleColor}
-        textAlign={subTitleAlignment}>
+        $textAlign={subTitleAlignment}>
         {subTitle}
       </MediumText>
     </Container>

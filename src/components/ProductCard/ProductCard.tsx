@@ -3,7 +3,7 @@ import { RenderaPalette } from "../../Colors";
 import { BodyText, HeadingLarge, LargeNumber } from "../../Typography";
 
 interface ProductCardProps {
-  cardType?: "medium" | "large";
+  $cardType?: "medium" | "large";
   imageUrl: string;
   title: string;
   description: string;
@@ -11,13 +11,11 @@ interface ProductCardProps {
   rating: string;
 }
 
-const CardContainer = styled.div<{ cardType: "medium" | "large" }>`
+const CardContainer = styled.div<{ $cardType: "medium" | "large" }>`
   display: flex;
   flex-direction: column;
   border-radius: 21px;
   background-color: ${RenderaPalette.beige100};
-  width: ${({ cardType }) => (cardType === "large" ? "400px" : "335px")};
-  height: ${({ cardType }) => (cardType === "large" ? "520px" : "450px")};
   padding: 10px;
 `;
 
@@ -30,12 +28,12 @@ const DetailsContainer = styled.div`
   justify-content: center;
 `;
 
-const DescriptionContainer = styled.div<{ cardType: "medium" | "large" }>`
+const DescriptionContainer = styled.div<{ $cardType: "medium" | "large" }>`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: ${({ cardType }) => (cardType === "large" ? "315px" : "240px")};
+  max-width: ${({ $cardType }) => ($cardType === "large" ? "315px" : "240px")};
   gap: 20px;
   text-align: center;
 `;
@@ -48,7 +46,7 @@ const RatingContainer = styled.div`
 `;
 
 export default function ProductCard({
-  cardType = "medium",
+  $cardType = "medium",
   imageUrl,
   title,
   description,
@@ -56,25 +54,25 @@ export default function ProductCard({
   rating,
 }: ProductCardProps) {
   return (
-    <CardContainer cardType={cardType}>
+    <CardContainer $cardType={$cardType}>
       <img
         src={imageUrl}
         alt={title}
         width="100%"
-        height={cardType === "large" ? "250px" : "200px"}
+        height={$cardType === "large" ? "250px" : "200px"}
       />
       <DetailsContainer>
-        {cardType === "medium" ? (
+        {$cardType === "medium" ? (
           <HeadingLarge>{title}</HeadingLarge>
         ) : (
           <HeadingLarge>{title}</HeadingLarge>
         )}
 
-        <DescriptionContainer cardType={cardType}>
-          {cardType === "medium" ? (
+        <DescriptionContainer $cardType={$cardType}>
+          {$cardType === "medium" ? (
             <BodyText
               fontSize="14px"
-              lineHeight="22px"
+              $lineHeight="22px"
               letterSpacing="0.09px"
               color={RenderaPalette.gray650}>
               {description}
@@ -82,25 +80,25 @@ export default function ProductCard({
           ) : (
             <BodyText
               fontSize="16px"
-              lineHeight="28px"
+              $lineHeight="28px"
               letterSpacing="0.11px"
               color={RenderaPalette.gray650}>
               {description}
             </BodyText>
           )}
 
-          {cardType === "medium" ? (
+          {$cardType === "medium" ? (
             <HeadingLarge>{price}</HeadingLarge>
           ) : (
             <LargeNumber>{price}</LargeNumber>
           )}
           <RatingContainer>
-            {cardType === "medium" ? (
+            {$cardType === "medium" ? (
               <img src="/images/star.png" alt="star" width={14} height={14} />
             ) : (
               <img src="/images/star.png" alt="star" width={18} height={18} />
             )}
-            {cardType === "medium" ? (
+            {$cardType === "medium" ? (
               <BodyText fontWeight={300} fontSize="12px">
                 {rating}
               </BodyText>

@@ -13,7 +13,7 @@ const NewsContainer = styled("div")`
   gap: 34px;
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    display: none;
   }
 `;
 export default function LatestNews() {
@@ -22,7 +22,7 @@ export default function LatestNews() {
       <TitleContainer
         title="Latest News"
         subTitle="Catch the latest updates from Rendera, including new collections, exclusive events, and exciting news from the world of luxury jewelry."
-        alignment="left"
+        $alignment="left"
       />
       <NewsContainer>
         <NewsCard

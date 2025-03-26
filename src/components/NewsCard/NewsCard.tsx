@@ -41,16 +41,16 @@ export default function NewsCard({
     <Container>
       <Image src={imgSrc} alt="image" />
       <DescriptionContainer>
-        <BodyText fontSize="12px" lineHeight="20px">
+        <BodyText fontSize="12px" $lineHeight="20px">
           {date}
         </BodyText>
-        <ExtraLargeText lineHeight="28px" fontFamily="Bellefair">
+        <ExtraLargeText $lineHeight="28px" fontFamily="Bellefair">
           {title}
         </ExtraLargeText>
-        <MediumText lineHeight="24px" color={RenderaPalette.gray625}>
+        <MediumText $lineHeight="24px" color={RenderaPalette.gray625}>
           {description}
         </MediumText>
-        <Button size="small" alignSelf="left">
+        <Button size="small" $alignSelf="left">
           {btnText}
         </Button>
       </DescriptionContainer>

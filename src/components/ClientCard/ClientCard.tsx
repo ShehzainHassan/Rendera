@@ -11,20 +11,20 @@ const CardContainer = styled.div`
   padding: 20px 40px;
 `;
 
-const ImageContainer = styled.figure<{ cardType: "big" | "medium" }>`
+const ImageContainer = styled.figure<{ $cardType: "big" | "medium" }>`
   border-radius: 500px;
   img {
-    width: ${({ cardType }) => (cardType === "medium" ? "45px" : "55px")};
-    height: ${({ cardType }) => (cardType === "medium" ? "45px" : "55px")};
+    width: ${({ $cardType }) => ($cardType === "medium" ? "45px" : "55px")};
+    height: ${({ $cardType }) => ($cardType === "medium" ? "45px" : "55px")};
   }
 `;
 
-const Ratings = styled.figure<{ cardType: "big" | "medium" }>`
+const Ratings = styled.figure<{ $cardType: "big" | "medium" }>`
   display: flex;
   gap: 4px;
   img {
-    width: ${({ cardType }) => (cardType === "medium" ? "15px" : "19px")};
-    height: ${({ cardType }) => (cardType === "medium" ? "15px" : "19px")};
+    width: ${({ $cardType }) => ($cardType === "medium" ? "15px" : "19px")};
+    height: ${({ $cardType }) => ($cardType === "medium" ? "15px" : "19px")};
   }
 `;
 
@@ -44,23 +44,23 @@ interface ClientCardProps {
   imgSrc: string;
   name: string;
   review: string;
-  cardType?: "big" | "medium";
+  $cardType?: "big" | "medium";
 }
 
 export default function ClientCard({
   imgSrc,
   name,
   review,
-  cardType = "big",
+  $cardType = "big",
 }: ClientCardProps) {
   return (
     <CardContainer>
       <SubContainer>
-        <ImageContainer cardType={cardType}>
+        <ImageContainer $cardType={$cardType}>
           <img src={imgSrc} alt="pic" />
         </ImageContainer>
         <ReviewContainer>
-          {cardType === "medium" ? (
+          {$cardType === "medium" ? (
             <ExtraLargeText
               fontSize="20px"
               letterSpacing="-0.82px"
@@ -70,30 +70,30 @@ export default function ClientCard({
           ) : (
             <ExtraLargeText
               fontSize="24px"
-              lineHeight="100%"
+              $lineHeight="100%"
               letterSpacing="-1px"
               fontFamily="Bellefair">
               {name}
             </ExtraLargeText>
           )}
-          <Ratings cardType={cardType}>
+          <Ratings $cardType={$cardType}>
             <img src="/images/rating.png" alt="star" />
             <img src="/images/rating.png" alt="star" />
             <img src="/images/rating.png" alt="star" />
             <img src="/images/rating.png" alt="star" />
             <img src="/images/rating.png" alt="star" />
           </Ratings>
-          {cardType === "medium" ? (
+          {$cardType === "medium" ? (
             <BodyText
               fontSize="12px"
-              lineHeight="20px"
+              $lineHeight="20px"
               color={RenderaPalette.gray800}>
               {review}
             </BodyText>
           ) : (
             <BodyText
               fontSize="14px"
-              lineHeight="24px"
+              $lineHeight="24px"
               letterSpacing="0.1px"
               color={RenderaPalette.gray800}>
               {review}
