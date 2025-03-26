@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import "./App.css";
 import AboutUs from "./components/AboutUs/AboutUs";
 import ContactUs from "./components/ContactUs/ContactUs";
@@ -13,12 +14,20 @@ import Trending from "./components/Trending/Trending";
 import { Wrapper } from "./components/Wrapper/Wrapper";
 
 function App() {
+  const productRef = useRef<HTMLDivElement>(null);
+  const scrollToProducts = () => {
+    if (productRef.current) {
+      productRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
-      <Hero />
+      <Hero scrollToProducts={scrollToProducts} />
       <Wrapper>
         <AboutUs />
-        <ProductContainer />
+        <div ref={productRef}>
+          <ProductContainer />
+        </div>
         <Trending />
         <ProductSwiper />
         <Reviews />

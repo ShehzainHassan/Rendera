@@ -86,7 +86,11 @@ const SubContainer = styled.div`
   gap: 24px;
 `;
 
-export default function Hero() {
+export default function Hero({
+  scrollToProducts,
+}: {
+  scrollToProducts: () => void;
+}) {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const navbarRef = useRef<HTMLDivElement>(null);
@@ -143,7 +147,7 @@ export default function Hero() {
         <HeroTitle $textAlign="center" color={RenderaPalette.white0}>
           Jewelry That Empowers
         </HeroTitle>
-        <Button>Explore Collections</Button>
+        <Button onClick={scrollToProducts}>Explore Collections</Button>
       </SubContainer>
     </Main>
   );
