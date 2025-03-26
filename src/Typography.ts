@@ -121,6 +121,7 @@ export const HeadingLightSmall = styled.p<{
   hoverColor?: string;
   mobileHoverFontWeight?: number;
   mobileHoverFontSize?: string;
+  disableHover?: boolean;
 }>`
   font-family: ${(props) => props.fontFamily || "Poppins, sans-serif"};
   font-weight: ${(props) => props.fontWeight || 500};
@@ -128,24 +129,36 @@ export const HeadingLightSmall = styled.p<{
   line-height: ${(props) => props.$lineHeight || "100%"};
   color: ${(props) => props.color || RenderaPalette.black1000};
 
-  &:hover {
-    font-weight: ${(props) => props.hoverFontWeight || 800};
-    font-size: ${(props) => props.hoverFontSize || props.fontSize || "16px"};
-    color: ${(props) => props.hoverColor || RenderaPalette.peach100};
-  }
+  ${({ disableHover, hoverFontWeight, hoverFontSize, hoverColor, fontSize }) =>
+    !disableHover &&
+    `
+      &:hover {
+        font-weight: ${hoverFontWeight || 800};
+        font-size: ${hoverFontSize || fontSize || "16px"};
+        color: ${hoverColor || RenderaPalette.peach100};
+      }
+    `}
 
   @media (max-width: 768px) {
     font-size: ${(props) => props.$mobileFontSize || props.fontSize || "12px"};
 
-    &:hover {
-      font-weight: ${(props) =>
-        props.mobileHoverFontWeight || props.hoverFontWeight || 600};
-      font-size: ${(props) =>
-        props.mobileHoverFontSize ||
-        props.hoverFontSize ||
-        props.$mobileFontSize ||
-        "14px"};
-    }
+    ${({
+      disableHover,
+      mobileHoverFontWeight,
+      hoverFontWeight,
+      mobileHoverFontSize,
+      hoverFontSize,
+      $mobileFontSize,
+    }) =>
+      !disableHover &&
+      `
+        &:hover {
+          font-weight: ${mobileHoverFontWeight || hoverFontWeight || 600};
+          font-size: ${
+            mobileHoverFontSize || hoverFontSize || $mobileFontSize || "14px"
+          };
+        }
+      `}
   }
 `;
 

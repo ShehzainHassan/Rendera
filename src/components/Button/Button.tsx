@@ -102,7 +102,9 @@ export default function Button({
       $isDisabled={$isDisabled}
       {...props}>
       {size === "small" ? (
-        <HeadingLightSmall color={color}>{children}</HeadingLightSmall>
+        <HeadingLightSmall disableHover={true} color={color}>
+          {children}
+        </HeadingLightSmall>
       ) : (
         <HeadingBold color={color}>{children}</HeadingBold>
       )}

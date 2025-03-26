@@ -96,9 +96,12 @@ export default function ContactUs() {
   };
   const saveEmail = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/subscribe", {
-        email,
-      });
+      const response = await axios.post(
+        "http://localhost:3000/newsletter/subscribe",
+        {
+          email,
+        }
+      );
 
       if (response.status === 200) {
         showSuccess();
