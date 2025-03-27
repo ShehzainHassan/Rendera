@@ -14,6 +14,7 @@ const StyledInput = styled.input`
   border: none;
   outline: none;
   background-color: transparent;
+  width: 100%;
   color: ${RenderaPalette.white0};
   font-size: 16px;
   &::placeholder {
