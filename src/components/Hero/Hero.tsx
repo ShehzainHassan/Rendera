@@ -87,11 +87,7 @@ const SubContainer = styled.div`
   gap: 24px;
 `;
 
-export default function Hero({
-  scrollToProducts,
-}: {
-  scrollToProducts: () => void;
-}) {
+export default function Hero() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const navbarRef = useRef<HTMLDivElement>(null);
@@ -122,6 +118,12 @@ export default function Hero({
   }, [isNavbarOpen]);
 
   const { t } = useTranslation();
+  const scrollToProducts = () => {
+    const products = document.getElementById("products-section");
+    if (products) {
+      products.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <Main>
       {isMobile ? (

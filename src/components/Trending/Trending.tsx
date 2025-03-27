@@ -50,6 +50,7 @@ export default function Trending() {
           />
         ))}
       </CardContainer>
+
       <Button>{t("trending.button")}</Button>
     </Section>
   );
