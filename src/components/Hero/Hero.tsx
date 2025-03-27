@@ -33,8 +33,7 @@ const MobileImageContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding-top: 45px;
-  padding-right: 45px;
+  margin: 50px;
   position: relative;
 `;
 
