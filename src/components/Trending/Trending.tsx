@@ -49,8 +49,8 @@ export default function Trending() {
             $cardType={product.cardType}
           />
         ))}
-        <Button>{t("trending.button")}</Button>
       </CardContainer>
+      <Button>{t("trending.button")}</Button>
     </Section>
   );
 }

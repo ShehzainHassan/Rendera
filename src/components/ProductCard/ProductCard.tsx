@@ -11,7 +11,7 @@ interface ProductCardProps {
   rating: string;
 }
 
-const CardContainer = styled.div<{ $cardType: "medium" | "large" }>`
+const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 21px;
@@ -53,7 +53,7 @@ export default function ProductCard({
   rating,
 }: ProductCardProps) {
   return (
-    <CardContainer $cardType={$cardType}>
+    <CardContainer>
       <img src={imageUrl} alt={title} width="100%" height="auto" />
       <DetailsContainer>
         <HeadingLarge
