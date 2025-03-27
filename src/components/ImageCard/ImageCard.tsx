@@ -6,7 +6,6 @@ const Container = styled("div")`
   display: flex;
   flex-direction: column;
   border-radius: 20px;
-
   position: relative;
 `;
 const TextContainer = styled("div")`
@@ -25,14 +24,19 @@ const TextContainer = styled("div")`
 const Image = styled("img")`
   width: 100%;
   height: auto;
+  border-radius: 20px;
 `;
-export default function ImageCard() {
+interface ImageCardProps {
+  imgSrc: string;
+  name: string;
+}
+export default function ImageCard({ imgSrc, name }: ImageCardProps) {
   return (
     <Container>
-      <Image src="/images/Earrings.png" alt="earring" />
+      <Image src={imgSrc} alt={name} />
       <TextContainer>
         <HeadingBold $lineHeight="28px" color={RenderaPalette.black1000}>
-          Earrings
+          {name}
         </HeadingBold>
       </TextContainer>
     </Container>

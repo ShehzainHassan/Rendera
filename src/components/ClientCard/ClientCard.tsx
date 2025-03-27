@@ -11,7 +11,7 @@ const CardContainer = styled.div`
   padding: 20px 40px;
 `;
 
-const ImageContainer = styled.figure<{ $cardType: "big" | "medium" }>`
+const ImageContainer = styled.figure<{ $cardType: "large" | "medium" }>`
   border-radius: 500px;
   img {
     width: ${({ $cardType }) => ($cardType === "medium" ? "45px" : "55px")};
@@ -19,7 +19,7 @@ const ImageContainer = styled.figure<{ $cardType: "big" | "medium" }>`
   }
 `;
 
-const Ratings = styled.figure<{ $cardType: "big" | "medium" }>`
+const Ratings = styled.figure<{ $cardType: "large" | "medium" }>`
   display: flex;
   gap: 4px;
   img {
@@ -44,14 +44,14 @@ interface ClientCardProps {
   imgSrc: string;
   name: string;
   review: string;
-  $cardType?: "big" | "medium";
+  $cardType?: "medium" | "large";
 }
 
 export default function ClientCard({
   imgSrc,
   name,
   review,
-  $cardType = "big",
+  $cardType = "large",
 }: ClientCardProps) {
   return (
     <CardContainer>

@@ -82,6 +82,10 @@ export const HeadingLarge = styled.p<{
   fontSize?: string;
   $lineHeight?: string;
   letterSpacing?: string;
+  $whiteSpace?: string;
+  overflow?: string;
+  $textOverflow?: string;
+  $maxWidth?: string;
 }>`
   font-family: ${(props) => props.fontFamily || "Poppins, sans-serif"};
   font-weight: ${(props) => props.fontWeight || 600};
@@ -89,6 +93,11 @@ export const HeadingLarge = styled.p<{
   line-height: ${(props) => props.$lineHeight || "100%"};
   letter-spacing: ${(props) => props.letterSpacing || "0px"};
   color: ${(props) => props.color || RenderaPalette.black1000};
+
+  ${(props) => props.$whiteSpace && `white-space: ${props.$whiteSpace};`}
+  ${(props) => props.overflow && `overflow: ${props.overflow};`}
+  ${(props) => props.$textOverflow && `text-overflow: ${props.$textOverflow};`}
+  ${(props) => props.$maxWidth && `max-width: ${props.$maxWidth};`}
 `;
 
 export const HeadingMedium = styled.p<{ color?: string }>`
@@ -121,7 +130,7 @@ export const HeadingLightSmall = styled.p<{
   hoverColor?: string;
   mobileHoverFontWeight?: number;
   mobileHoverFontSize?: string;
-  disableHover?: boolean;
+  $disableHover?: boolean;
 }>`
   font-family: ${(props) => props.fontFamily || "Poppins, sans-serif"};
   font-weight: ${(props) => props.fontWeight || 500};
@@ -129,8 +138,8 @@ export const HeadingLightSmall = styled.p<{
   line-height: ${(props) => props.$lineHeight || "100%"};
   color: ${(props) => props.color || RenderaPalette.black1000};
 
-  ${({ disableHover, hoverFontWeight, hoverFontSize, hoverColor, fontSize }) =>
-    !disableHover &&
+  ${({ $disableHover, hoverFontWeight, hoverFontSize, hoverColor, fontSize }) =>
+    !$disableHover &&
     `
       &:hover {
         font-weight: ${hoverFontWeight || 800};
@@ -143,14 +152,14 @@ export const HeadingLightSmall = styled.p<{
     font-size: ${(props) => props.$mobileFontSize || props.fontSize || "12px"};
 
     ${({
-      disableHover,
+      $disableHover,
       mobileHoverFontWeight,
       hoverFontWeight,
       mobileHoverFontSize,
       hoverFontSize,
       $mobileFontSize,
     }) =>
-      !disableHover &&
+      !$disableHover &&
       `
         &:hover {
           font-weight: ${mobileHoverFontWeight || hoverFontWeight || 600};
@@ -181,7 +190,7 @@ export const ExtraLargeText = styled.p<{
 export const MediumText = styled.p<{
   color?: string;
   $textAlign?: string;
-  $maxWidth?: string;
+  $$maxWidth?: string;
   $mobilemaxWidth?: string;
   fontFamily?: string;
   fontWeight?: number;
@@ -197,7 +206,7 @@ export const MediumText = styled.p<{
   letter-spacing: ${(props) => props.letterSpacing || "0.1px"};
   color: ${(props) => props.color || RenderaPalette.black1000};
   text-align: ${(props) => props.$textAlign || "left"};
-  ${(props) => props.$maxWidth && `max-width: ${props.$maxWidth};`}
+  ${(props) => props.$$maxWidth && `max-width: ${props.$$maxWidth};`}
 
   @media (max-width: 768px) {
     ${(props) =>

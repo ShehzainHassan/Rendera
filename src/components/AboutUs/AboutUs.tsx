@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { RenderaPalette } from "../../Colors";
 import { HeroTitle, MediumText } from "../../Typography";
 import Button from "../Button/Button";
+import { useTranslation } from "react-i18next";
 
 const Section = styled("section")`
   display: grid;
@@ -12,6 +13,7 @@ const Section = styled("section")`
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column-reverse;
+    gap: 32px;
   }
 `;
 const Article = styled("article")`
@@ -37,6 +39,7 @@ const Image = styled("img")`
   height: auto;
 `;
 export default function AboutUs() {
+  const { t } = useTranslation();
   return (
     <Section>
       <Article>
@@ -45,23 +48,19 @@ export default function AboutUs() {
             letterSpacing="-2px"
             fontSize="56px"
             $mobileFontSize="36px">
-            About Rendera
+            {t("about.title")}
           </HeroTitle>
           <TextContainer>
             <MediumText $lineHeight="28px" color={RenderaPalette.gray700}>
-              At Rendera, we believe in luxury, empowerment, and craftsmanship.
-              Our designs are made to inspire and transform, creating timeless
-              pieces for the modern individual.
+              {t("about.subtext1")}
             </MediumText>
             <MediumText $lineHeight="28px" color={RenderaPalette.gray700}>
-              Each piece tells a story of elegance and sophistication, carefully
-              crafted with attention to detail and a commitment to excellence
-              that defines our brand.
+              {t("about.subtext2")}
             </MediumText>
           </TextContainer>
         </SectionTitleContainer>
 
-        <Button $alignSelf="left">Learn More</Button>
+        <Button $alignSelf="left">{t("about.button")}</Button>
       </Article>
       <ImageContainer>
         <Image src="/images/about-us.png" alt="about" />

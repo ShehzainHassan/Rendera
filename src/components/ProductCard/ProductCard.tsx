@@ -33,7 +33,6 @@ const DescriptionContainer = styled.div<{ $cardType: "medium" | "large" }>`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: ${({ $cardType }) => ($cardType === "large" ? "315px" : "240px")};
   gap: 20px;
   text-align: center;
 `;
@@ -55,37 +54,26 @@ export default function ProductCard({
 }: ProductCardProps) {
   return (
     <CardContainer $cardType={$cardType}>
-      <img
-        src={imageUrl}
-        alt={title}
-        width="100%"
-        height={$cardType === "large" ? "250px" : "200px"}
-      />
+      <img src={imageUrl} alt={title} width="100%" height="auto" />
       <DetailsContainer>
-        {$cardType === "medium" ? (
-          <HeadingLarge>{title}</HeadingLarge>
-        ) : (
-          <HeadingLarge>{title}</HeadingLarge>
-        )}
+        <HeadingLarge
+          $lineHeight={$cardType === "medium" ? "24.44px" : "31.94px"}
+          fontSize={$cardType === "medium" ? "24px" : "28px"}
+          $whiteSpace="nowrap"
+          overflow="hidden"
+          $textOverflow="ellipsis"
+          $maxWidth="100%">
+          {title}
+        </HeadingLarge>
 
         <DescriptionContainer $cardType={$cardType}>
-          {$cardType === "medium" ? (
-            <BodyText
-              fontSize="14px"
-              $lineHeight="22px"
-              letterSpacing="0.09px"
-              color={RenderaPalette.gray650}>
-              {description}
-            </BodyText>
-          ) : (
-            <BodyText
-              fontSize="16px"
-              $lineHeight="28px"
-              letterSpacing="0.11px"
-              color={RenderaPalette.gray650}>
-              {description}
-            </BodyText>
-          )}
+          <BodyText
+            fontSize={$cardType === "medium" ? "16px" : "16px"}
+            $lineHeight={$cardType === "medium" ? "22px" : "28px"}
+            letterSpacing={$cardType === "medium" ? "0.09px" : "0.11px"}
+            color={RenderaPalette.gray650}>
+            {description}
+          </BodyText>
 
           {$cardType === "medium" ? (
             <HeadingLarge>{price}</HeadingLarge>
@@ -98,15 +86,11 @@ export default function ProductCard({
             ) : (
               <img src="/images/star.png" alt="star" width={18} height={18} />
             )}
-            {$cardType === "medium" ? (
-              <BodyText fontWeight={300} fontSize="12px">
-                {rating}
-              </BodyText>
-            ) : (
-              <BodyText fontWeight={300} fontSize="13.69px">
-                {rating}
-              </BodyText>
-            )}
+            <BodyText
+              fontSize={$cardType === "medium" ? "12px" : "13.69px"}
+              fontWeight={300}>
+              {rating}
+            </BodyText>
           </RatingContainer>
         </DescriptionContainer>
       </DetailsContainer>

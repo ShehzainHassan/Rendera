@@ -5,8 +5,9 @@ const Container = styled.div`
   border: 1px solid ${RenderaPalette.white0};
   border-radius: 20px;
   background-color: ${RenderaPalette.brown400};
-  padding: 20px 30px 18px 30px;
   display: flex;
+  padding: 20px;
+  width: 100%;
 `;
 
 const StyledInput = styled.input`

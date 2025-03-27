@@ -19,7 +19,7 @@ interface TitleContainerProps {
   $alignment?: "left" | "middle";
   titleColor?: string;
   subTitleColor?: string;
-  $maxWidth?: string;
+  $$maxWidth?: string;
   $mobilemaxWidth?: string;
   $mobile$lineHeight?: string;
   $mobileFontSize?: string;
@@ -33,7 +33,7 @@ export default function TitleContainer({
   titleColor = RenderaPalette.black950,
   subTitleColor = RenderaPalette.gray700,
   titleSize = "large",
-  $maxWidth = "650px",
+  $$maxWidth = "650px",
   $mobileFontSize = "36px",
   $mobilemaxWidth = "390px",
   $mobile$lineHeight = "28px",
@@ -62,7 +62,7 @@ export default function TitleContainer({
         $lineHeight={$mobile$lineHeight}
         $mobilemaxWidth={$mobilemaxWidth}
         $mobile$lineHeight={$mobile$lineHeight}
-        $maxWidth={$maxWidth}
+        $$maxWidth={$$maxWidth}
         color={subTitleColor}
         $textAlign={subTitleAlignment}>
         {subTitle}

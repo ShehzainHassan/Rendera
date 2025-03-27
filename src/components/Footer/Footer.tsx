@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { RenderaPalette } from "../../Colors";
 import { BodyText, MediumTitle } from "../../Typography";
 import Navbar from "../Navbar/Navbar";
+import { useTranslation } from "react-i18next";
 
 const FooterContainer = styled("footer")`
   display: flex;
@@ -67,11 +68,14 @@ const ImageContainer = styled("figure")`
   cursor: pointer;
 `;
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <FooterContainer>
       <SubContainer>
         <NavContainer>
-          <MediumTitle color={RenderaPalette.white0}>Quick Links</MediumTitle>
+          <MediumTitle color={RenderaPalette.white0}>
+            {t("footer.title")}
+          </MediumTitle>
           <Spacer />
           <Navbar $showNav={true} />
         </NavContainer>
@@ -93,7 +97,7 @@ export default function Footer() {
           $lineHeight="22px"
           letterSpacing="0.09px"
           color={RenderaPalette.white0}>
-          © 2025 Rendera Jewelry. All rights reserved
+          {t("footer.allRightsReserved")}
         </BodyText>
         <PolicyServiceContainer>
           <BodyText
@@ -101,14 +105,14 @@ export default function Footer() {
             $lineHeight="22px"
             letterSpacing="0.09px"
             color={RenderaPalette.white0}>
-            Privacy Policy
+            {t("footer.policy")}
           </BodyText>
           <BodyText
             fontSize="14px"
             $lineHeight="22px"
             letterSpacing="0.09px"
             color={RenderaPalette.white0}>
-            Terms of Service
+            {t("footer.terms_service")}
           </BodyText>
         </PolicyServiceContainer>
       </TextContainer>

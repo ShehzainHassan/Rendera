@@ -1,0 +1,144 @@
+{
+    "navbar": {
+        "home": "Home",
+        "about": "About",
+        "shop": "Shop",
+        "collections": "Collections",
+        "blog": "Blog",
+        "contact": "Contact"
+    },
+    "hero": {
+        "title": "Jewelry That Empowers",
+        "explore": "Explore Collections"
+    },
+    "about": {
+        "title": "About Rendera",
+        "subtext1": "At Rendera, we believe in luxury, empowerment, and craftsmanship. Our designs are made to inspire and transform, creating timeless pieces for the modern individual.",
+        "subtext2": "Each piece tells a story of elegance and sophistication, carefully crafted with attention to detail and a commitment to excellence that defines our brand.",
+        "button": "Learn More"
+    },
+    "Collections": {
+        "Earrings": {
+            "imgSrc": "/images/Earrings.png",
+            "name": "Earrings"
+        },
+        "Hoops": {
+            "imgSrc": "/images/Hoops.png",
+            "name": "Hoops"
+        },
+        "Rings": {
+            "imgSrc": "/images/Rings.png",
+            "name": "Rings"
+        },
+        "Necklaces": {
+            "imgSrc": "/images/Necklaces.png",
+            "name": "Necklaces"
+        }
+    },
+    "trending": {
+        "title": "Trending Now",
+        "subtext": "Explore our best-selling collections, featuring exquisite designs for every occasion.",
+        "products": {
+            "emerald": {
+                "title": "Aurora Emerald Ring",
+                "description": "An elegant emerald surrounded by diamonds on a white gold band, exuding timeless beauty.",
+                "price": "$135",
+                "rating": "5.0 Ratings",
+                "imgUrl": "/images/ring.png",
+                "cardType": "medium"
+            },
+            "pearl": {
+                "title": "Infinity Pearl Bracelet",
+                "description": "Freshwater pearls in an infinity design, set in silver, symbolizing eternal elegance.",
+                "price": "$165",
+                "rating": "5.0 Ratings",
+                "imgUrl": "/images/bracelet.png",
+                "cardType": "large"
+            },
+            "necklace": {
+                "title": "Celestial Necklace Bracelet",
+                "description": "Diamonds set in 18k white gold, inspired by the stars, offering a celestial touch of luxury.",
+                "price": "$195",
+                "rating": "5.0 Ratings",
+                "imgUrl": "/images/necklace.png",
+                "cardType": "medium"
+            }
+        },
+        "button": "Discover More"
+    },
+    "clients": {
+        "title": "What our clients say",
+        "subtext": "Stories from clients who have made Rendera jewelry part of their most meaningful moments.",
+        "reviews": {
+            "client1": {
+                "name": "Lois Lane",
+                "review": "The craftsmanship of my engagement ring exceeded all expectations. It's become a treasured heirloom that I'll pass down for generations.",
+                "imgSrc": "/images/client1.png",
+                "cardType": "large"
+            },
+            "client2": {
+                "name": "Angelina Alex",
+                "review": "The craftsmanship of my engagement ring exceeded all expectations. It's become a treasured heirloom that I'll pass down for generations.",
+                "imgSrc": "/images/client2.png",
+                "cardType": "large"
+            },
+            "client3": {
+                "name": "Lois Lane",
+                "review": "The craftsmanship of my engagement ring exceeded all expectations. It's become a treasured heirloom that I'll pass down for generations.",
+                "imgSrc": "/images/client1.png",
+                "cardType": "medium"
+            },
+            "client4": {
+                "name": "Angelina Alex",
+                "review": "The craftsmanship of my engagement ring exceeded all expectations. It's become a treasured heirloom that I'll pass down for generations.",
+                "imgSrc": "/images/client2.png",
+                "cardType": "medium"
+            },
+            "client5": {
+                "name": "Angelina Alex",
+                "review": "The craftsmanship of my engagement ring exceeded all expectations. It's become a treasured heirloom that I'll pass down for generations.",
+                "imgSrc": "/images/client2.png",
+                "cardType": "medium"
+            }
+        },
+        "button": "View more"
+    },
+    "latest": {
+        "title": "Latest News",
+        "subtext": "Catch the latest updates from Rendera, including new collections, exclusive events, and exciting news from the world of luxury jewelry.",
+        "news": {
+            "news1": {
+                "date": "12 October, 2025",
+                "title": "Selecting the Perfect Diamond",
+                "description": "Learn the key factors to consider when choosing a diamond, from cut and clarity to carat and color...",
+                "imgSrc": "/images/jewellery.png"
+            },
+            "news2": {
+                "date": "12 October, 2025",
+                "title": "Selecting the Perfect Diamond",
+                "description": "Learn the key factors to consider when choosing a diamond, from cut and clarity to carat and color...",
+                "imgSrc": "/images/diamond.png"
+            },
+            "news3": {
+                "date": "12 October, 2025",
+                "title": "Jewelry Care and Maintenance",
+                "description": "Discover essential tips for preserving the beauty and longevity of your jewelry...",
+                "imgSrc": "/images/care_maintenance.png"
+            }
+        },
+        "btnTxt": "Read more"
+    },
+    "subscribe": {
+        "title": "Stay Inspired",
+        "subtext": "Subscribe to our newsletter for exclusive designs, special offers, and insights into the world of fine jewelry.",
+        "btnTxt": "Subscribe",
+        "promoTxt": "Join our community and receive 10% off your first order.",
+        "consentTxt": "By subscribing, you agree to our Privacy Policy and consent to receive updates from Rendera"
+    },
+    "footer": {
+        "title": "Quick Links",
+        "allRightsReserved": "© 2025 Rendera Jewelry. All rights reserved",
+        "policy": "Privacy Policy",
+        "terms_service": "Terms of Service"
+    }
+}

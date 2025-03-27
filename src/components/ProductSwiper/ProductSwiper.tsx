@@ -1,47 +1,23 @@
+import { useTranslation } from "react-i18next";
 import ProductCard from "../ProductCard/ProductCard";
 import StyledSlider from "../Swiper/Swiper";
-
-const products = [
-  {
-    imageUrl: "/images/Ring.png",
-    title: "Aurora Emerald Ring",
-    description:
-      "An elegant emerald surrounded by diamonds on a white gold band, exuding timeless beauty.",
-    price: "$135",
-    rating: "5.0 Ratings",
-  },
-  {
-    imageUrl: "/images/Ring.png",
-    title: "Aurora Emerald Ring",
-    description:
-      "An elegant emerald surrounded by diamonds on a white gold band, exuding timeless beauty.",
-    price: "$135",
-    rating: "5.0 Ratings",
-  },
-  {
-    imageUrl: "/images/Ring.png",
-    title: "Aurora Emerald Ring",
-    description:
-      "An elegant emerald surrounded by diamonds on a white gold band, exuding timeless beauty.",
-    price: "$135",
-    rating: "5.0 Ratings",
-  },
-];
+import { Products } from "../../interfaces";
 
 const ProductSwiper = () => {
+  const { t } = useTranslation();
+  const products = t("trending.products", { returnObjects: true }) as Products;
   return (
     <StyledSlider>
-      {products.map((product, index) => (
-        <div key={index}>
-          <ProductCard
-            $cardType="medium"
-            imageUrl={product.imageUrl}
-            title={product.title}
-            description={product.description}
-            price={product.price}
-            rating={product.rating}
-          />
-        </div>
+      {Object.entries(products).map(([key, product]) => (
+        <ProductCard
+          key={key}
+          imageUrl={product.imgUrl}
+          title={product.title}
+          description={product.description}
+          price={product.price}
+          rating={product.rating}
+          $cardType="medium"
+        />
       ))}
     </StyledSlider>
   );

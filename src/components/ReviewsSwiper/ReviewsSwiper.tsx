@@ -1,39 +1,23 @@
+import { useTranslation } from "react-i18next";
 import ClientCard from "../ClientCard/ClientCard";
 import StyledSlider from "../Swiper/Swiper";
-
-const reviews = [
-  {
-    imageUrl: "/images/client-2.png",
-    name: "Angelina Alex",
-    review:
-      "The craftsmanship of my engagement ring exceeded all expectations. It's become a treasured heirloom that I'll pass down for generations.",
-  },
-  {
-    imageUrl: "/images/client-2.png",
-    name: "Angelina Alex",
-    review:
-      "The craftsmanship of my engagement ring exceeded all expectations. It's become a treasured heirloom that I'll pass down for generations.",
-  },
-  {
-    imageUrl: "/images/client-2.png",
-    name: "Angelina Alex",
-    review:
-      "The craftsmanship of my engagement ring exceeded all expectations. It's become a treasured heirloom that I'll pass down for generations.",
-  },
-];
+import { ReviewsData } from "../../interfaces";
 
 const ReviewsSwiper = () => {
+  const { t } = useTranslation();
+  const reviews = t("clients.reviews", { returnObjects: true }) as ReviewsData;
+  const reviewList = Object.values(reviews);
+
   return (
     <StyledSlider>
-      {reviews.map((review, index) => (
-        <div key={index}>
-          <ClientCard
-            $cardType="medium"
-            imgSrc={review.imageUrl}
-            name={review.name}
-            review={review.review}
-          />
-        </div>
+      {reviewList.map((review, index) => (
+        <ClientCard
+          key={index}
+          $cardType="medium"
+          imgSrc={review.imgSrc}
+          name={review.name}
+          review={review.review}
+        />
       ))}
     </StyledSlider>
   );

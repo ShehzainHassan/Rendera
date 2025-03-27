@@ -3,10 +3,30 @@ import Slider, { Settings } from "react-slick";
 import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { RenderaPalette } from "../../Colors";
 
 const SliderWrapper = styled.div`
   display: none;
 
+  .slick-slide > div {
+    margin: 0 10px;
+  }
+  .slick-list {
+    margin: 0 -10px;
+  }
+  .slick-dots {
+    bottom: -30px;
+  }
+  .slick-dots li.slick-active button:before {
+    opacity: 0.75;
+    color: #b28a65;
+    font-size: 20px;
+  }
+  .slick-dots li button:before {
+    font-size: 10px;
+    opacity: 1;
+    color: ${RenderaPalette.gray700};
+  }
   @media (max-width: 768px) {
     display: block;
     padding: 10px;

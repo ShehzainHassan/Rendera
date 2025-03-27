@@ -2,6 +2,8 @@ import styled from "styled-components";
 import TitleContainer from "../TitleContainer/TitleContainer";
 import ClientCard from "../ClientCard/ClientCard";
 import Button from "../Button/Button";
+import { useTranslation } from "react-i18next";
+import { ReviewsData } from "../../interfaces";
 
 const Section = styled("section")`
   display: flex;
@@ -19,51 +21,39 @@ const ReviewsContainer = styled("div")`
   }
 `;
 export default function Reviews() {
+  const { t } = useTranslation();
+  const reviews = t("clients.reviews", { returnObjects: true }) as ReviewsData;
+  const reviewList = Object.values(reviews);
   return (
     <Section>
       <TitleContainer
-        title="What our clients say"
-        subTitle="Stories from clients who have made Rendera jewelry part of their most meaningful moments."
+        title={t("clients.title")}
+        subTitle={t("clients.subtext")}
         subTitleAlignment="center"
       />
       <ReviewsContainer>
-        <ClientCard
-          imgSrc="/images/client-1.png"
-          name="Lois Lane"
-          review="The craftsmanship of my engagement ring exceeded all expectations.
-                It's become a treasured heirloom that I'll pass down for generations."
-        />
-        <ClientCard
-          imgSrc="/images/client-2.png"
-          name="Angelina Alex"
-          review="The craftsmanship of my engagement ring exceeded all expectations.
-                It's become a treasured heirloom that I'll pass down for generations."
-        />
+        {reviewList.slice(0, 2).map((client, index) => (
+          <ClientCard
+            key={index}
+            imgSrc={client.imgSrc}
+            name={client.name}
+            review={client.review}
+            $cardType={client.cardType}
+          />
+        ))}
       </ReviewsContainer>
       <ReviewsContainer>
-        <ClientCard
-          $cardType="medium"
-          imgSrc="/images/client-2.png"
-          name="Angelina Alex"
-          review="The craftsmanship of my engagement ring exceeded all expectations.
-                It's become a treasured heirloom that I'll pass down for generations."
-        />
-        <ClientCard
-          $cardType="medium"
-          imgSrc="/images/client-2.png"
-          name="Angelina Alex"
-          review="The craftsmanship of my engagement ring exceeded all expectations.
-                It's become a treasured heirloom that I'll pass down for generations."
-        />
-        <ClientCard
-          $cardType="medium"
-          imgSrc="/images/client-2.png"
-          name="Angelina Alex"
-          review="The craftsmanship of my engagement ring exceeded all expectations.
-                It's become a treasured heirloom that I'll pass down for generations."
-        />
+        {reviewList.slice(2, reviewList.length).map((client, index) => (
+          <ClientCard
+            key={index}
+            imgSrc={client.imgSrc}
+            name={client.name}
+            review={client.review}
+            $cardType={client.cardType}
+          />
+        ))}
       </ReviewsContainer>
-      <Button>View More</Button>
+      <Button>{t("clients.button")}</Button>
     </Section>
   );
 }

@@ -7,6 +7,7 @@ import { HeadingSmall, MediumText } from "../../Typography";
 import { toast, ToastContainer } from "react-toastify";
 import { useState } from "react";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 const Section = styled("section")`
   display: flex;
@@ -20,7 +21,7 @@ const Section = styled("section")`
 const InputContainer = styled("div")`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 16px;
   @media (max-width: 768px) {
     gap: 8px;
@@ -123,14 +124,15 @@ export default function ContactUs() {
     }
     saveEmail();
   };
+  const { t } = useTranslation();
   return (
     <Section>
       <ToastContainer />
       <SubContainer1>
         <TitleContainer
-          title="Stay Inspired"
+          title={t("subscribe.title")}
           titleSize="medium"
-          subTitle="Subscribe to our newsletter for exclusive designs, special offers, and insights into the world of fine jewelry."
+          subTitle={t("subscribe.subtext")}
           subTitleAlignment="center"
           titleColor={RenderaPalette.white0}
           subTitleColor={RenderaPalette.white100}
@@ -145,18 +147,17 @@ export default function ContactUs() {
             $variant="secondary"
             $isDisabled={!email.trim()}
             color={RenderaPalette.black1000}>
-            Subscribe
+            {t("subscribe.btnTxt")}
           </Button>
         </InputContainer>
       </SubContainer1>
 
       <TextContainer>
         <HeadingSmall color={RenderaPalette.white0}>
-          Join our community and receive 10% off your first order.
+          {t("subscribe.promoTxt")}
         </HeadingSmall>
         <MediumText $lineHeight="28px" color={RenderaPalette.white100}>
-          By subscribing, you agree to our Privacy Policy and consent to receive
-          updates from Rendera
+          {t("subscribe.consentTxt")}
         </MediumText>
       </TextContainer>
     </Section>

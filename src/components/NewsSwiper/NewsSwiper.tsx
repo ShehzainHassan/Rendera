@@ -1,43 +1,22 @@
+import { useTranslation } from "react-i18next";
 import NewsCard from "../NewsCard/NewsCard";
 import StyledSlider from "../Swiper/Swiper";
-
-const allNews = [
-  {
-    imageUrl: "/images/jewellery.png",
-    date: "October 12, 2025",
-    title: "The Art of Fine Jewelry Making",
-    description:
-      "Explore the intricate craftsmanship behind fine jewelry, where precision, skill, and passion combine to....",
-  },
-
-  {
-    imageUrl: "/images/jewellery.png",
-    date: "October 12, 2025",
-    title: "The Art of Fine Jewelry Making",
-    description:
-      "Explore the intricate craftsmanship behind fine jewelry, where precision, skill, and passion combine to....",
-  },
-  {
-    imageUrl: "/images/jewellery.png",
-    date: "October 12, 2025",
-    title: "The Art of Fine Jewelry Making",
-    description:
-      "Explore the intricate craftsmanship behind fine jewelry, where precision, skill, and passion combine to....",
-  },
-];
+import { NewsData } from "../../interfaces";
 
 const NewsSwiper = () => {
+  const { t } = useTranslation();
+  const news = t("latest.news", { returnObjects: true }) as NewsData;
+
   return (
     <StyledSlider>
-      {allNews.map((news, index) => (
-        <div key={index}>
-          <NewsCard
-            imgSrc={news.imageUrl}
-            title={news.title}
-            description={news.description}
-            date={news.date}
-          />
-        </div>
+      {Object.values(news).map((article, index) => (
+        <NewsCard
+          key={index}
+          imgSrc={article.imgSrc}
+          date={article.date}
+          title={article.title}
+          description={article.description}
+        />
       ))}
     </StyledSlider>
   );

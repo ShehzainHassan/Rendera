@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import TitleContainer from "../TitleContainer/TitleContainer";
 import NewsCard from "../NewsCard/NewsCard";
+import { useTranslation } from "react-i18next";
+import { NewsData } from "../../interfaces";
 
 const Section = styled("section")`
   display: flex;
@@ -17,6 +19,8 @@ const NewsContainer = styled("div")`
   }
 `;
 export default function LatestNews() {
+  const { t } = useTranslation();
+  const news = t("latest.news", { returnObjects: true }) as NewsData;
   return (
     <Section>
       <TitleContainer
@@ -25,24 +29,15 @@ export default function LatestNews() {
         $alignment="left"
       />
       <NewsContainer>
-        <NewsCard
-          imgSrc="/images/jewellery.png"
-          date="October 12, 2025"
-          title="The Art of Fine Jewelry Making"
-          description="Explore the intricate craftsmanship behind fine jewelry, where precision, skill, and passion combine to...."
-        />
-        <NewsCard
-          imgSrc="/images/jewellery.png"
-          date="October 12, 2025"
-          title="The Art of Fine Jewelry Making"
-          description="Explore the intricate craftsmanship behind fine jewelry, where precision, skill, and passion combine to...."
-        />
-        <NewsCard
-          imgSrc="/images/jewellery.png"
-          date="October 12, 2025"
-          title="The Art of Fine Jewelry Making"
-          description="Explore the intricate craftsmanship behind fine jewelry, where precision, skill, and passion combine to...."
-        />
+        {Object.values(news).map((article, index) => (
+          <NewsCard
+            key={index}
+            imgSrc={article.imgSrc}
+            date={article.date}
+            title={article.title}
+            description={article.description}
+          />
+        ))}
       </NewsContainer>
     </Section>
   );

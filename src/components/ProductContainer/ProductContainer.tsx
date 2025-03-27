@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import ImageCard from "../ImageCard/ImageCard";
+import { useTranslation } from "react-i18next";
+import { CollectionsData } from "../../interfaces";
 const Container = styled("div")`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -12,12 +14,15 @@ const Container = styled("div")`
 `;
 
 export default function ProductContainer() {
+  const { t } = useTranslation();
+  const collections = t("Collections", {
+    returnObjects: true,
+  }) as CollectionsData;
   return (
     <Container>
-      <ImageCard />
-      <ImageCard />
-      <ImageCard />
-      <ImageCard />
+      {Object.values(collections).map((item, index) => (
+        <ImageCard key={index} imgSrc={item.imgSrc} name={item.name} />
+      ))}
     </Container>
   );
 }

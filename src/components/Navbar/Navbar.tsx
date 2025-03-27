@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { RenderaPalette } from "../../Colors";
 import { HeadingLightSmall } from "../../Typography";
+import { useTranslation } from "react-i18next";
 
 const NavbarContainer = styled.nav<{ $showNav: boolean }>`
   display: flex;
@@ -41,46 +42,48 @@ interface NavBarProps {
 }
 
 export default function Navbar({ $showNav = true }: NavBarProps) {
+  const { t } = useTranslation();
+
   return (
     <NavbarContainer $showNav={$showNav}>
       <NavList>
         <NavItem>
           <Link href="https://rendera.co" target="_blank">
             <HeadingLightSmall color={RenderaPalette.white0}>
-              Home
+              {t("navbar.home")}
             </HeadingLightSmall>
           </Link>
         </NavItem>
         <NavItem>
           <Link href="https://rendera.co" target="_blank">
             <HeadingLightSmall color={RenderaPalette.white0}>
-              About
+              {t("navbar.about")}
             </HeadingLightSmall>
           </Link>
         </NavItem>
         <NavItem>
           <Link href="https://rendera.co" target="_blank">
             <HeadingLightSmall color={RenderaPalette.white0}>
-              Shop
+              {t("navbar.shop")}
             </HeadingLightSmall>
           </Link>
         </NavItem>
         <NavItem>
           <HeadingLightSmall color={RenderaPalette.white0}>
-            Collections
+            {t("navbar.collections")}
           </HeadingLightSmall>
         </NavItem>
         <NavItem>
           <Link href="https://rendera.co" target="_blank">
             <HeadingLightSmall color={RenderaPalette.white0}>
-              Blog
+              {t("navbar.blog")}
             </HeadingLightSmall>
           </Link>
         </NavItem>
         <NavItem>
           <Link href="https://rendera.co" target="_blank">
             <HeadingLightSmall color={RenderaPalette.white0}>
-              Contact
+              {t("navbar.contact")}
             </HeadingLightSmall>
           </Link>
         </NavItem>

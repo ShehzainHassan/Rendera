@@ -4,6 +4,7 @@ import { HeroTitle } from "../../Typography";
 import Navbar from "../Navbar/Navbar";
 import Button from "../Button/Button";
 import { RenderaPalette } from "../../Colors";
+import { useTranslation } from "react-i18next";
 
 const Main = styled.main`
   display: flex;
@@ -120,6 +121,7 @@ export default function Hero({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isNavbarOpen]);
 
+  const { t } = useTranslation();
   return (
     <Main>
       {isMobile ? (
@@ -145,9 +147,9 @@ export default function Hero({
 
       <SubContainer>
         <HeroTitle $textAlign="center" color={RenderaPalette.white0}>
-          Jewelry That Empowers
+          {t("hero.title")}
         </HeroTitle>
-        <Button onClick={scrollToProducts}>Explore Collections</Button>
+        <Button onClick={scrollToProducts}> {t("hero.explore")}</Button>
       </SubContainer>
     </Main>
   );

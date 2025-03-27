@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { RenderaPalette } from "../../Colors";
 import { BodyText, ExtraLargeText, MediumText } from "../../Typography";
 import Button from "../Button/Button";
+import { useTranslation } from "react-i18next";
 
 const Container = styled("div")`
   display: flex;
@@ -10,6 +11,7 @@ const Container = styled("div")`
   background-color: ${RenderaPalette.beige300};
   width: 100%;
   height: auto;
+  justify-content: space-between;
 `;
 const Image = styled.img`
   width: 100%;
@@ -35,8 +37,9 @@ export default function NewsCard({
   date,
   title,
   description,
-  btnText = "Read More",
+  btnText,
 }: NewsCardProps) {
+  const { t } = useTranslation();
   return (
     <Container>
       <Image src={imgSrc} alt="image" />
@@ -51,7 +54,7 @@ export default function NewsCard({
           {description}
         </MediumText>
         <Button size="small" $alignSelf="left">
-          {btnText}
+          {btnText || t("latest.btnTxt")}
         </Button>
       </DescriptionContainer>
     </Container>

@@ -12,7 +12,7 @@ import Reviews from "./components/Reviews/Reviews";
 import ReviewsSwiper from "./components/ReviewsSwiper/ReviewsSwiper";
 import Trending from "./components/Trending/Trending";
 import { Wrapper } from "./components/Wrapper/Wrapper";
-
+import "./i18n";
 function App() {
   const productRef = useRef<HTMLDivElement>(null);
   const scrollToProducts = () => {
