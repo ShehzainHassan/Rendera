@@ -4,6 +4,7 @@ import ProductCard from "../ProductCard/ProductCard";
 import TitleContainer from "../TitleContainer/TitleContainer";
 import { useTranslation } from "react-i18next";
 import { Products } from "../../interfaces";
+import ProductSwiper from "../ProductSwiper/ProductSwiper";
 
 const Section = styled("section")`
   display: flex;
@@ -12,6 +13,7 @@ const Section = styled("section")`
   justify-content: center;
   gap: 40px;
   @media (max-width: 768px) {
+    display: block;
     gap: 24px;
   }
 `;
@@ -25,6 +27,12 @@ const CardContainer = styled("div")`
   @media (max-width: 768px) {
     display: none;
   }
+`;
+const Center = styled("div")`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
 `;
 
 export default function Trending() {
@@ -50,8 +58,11 @@ export default function Trending() {
           />
         ))}
       </CardContainer>
+      <ProductSwiper />
 
-      <Button>{t("trending.button")}</Button>
+      <Center>
+        <Button>{t("trending.button")}</Button>
+      </Center>
     </Section>
   );
 }

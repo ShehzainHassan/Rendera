@@ -3,12 +3,18 @@ import TitleContainer from "../TitleContainer/TitleContainer";
 import NewsCard from "../NewsCard/NewsCard";
 import { useTranslation } from "react-i18next";
 import { NewsData } from "../../interfaces";
+import NewsSwiper from "../NewsSwiper/NewsSwiper";
 
 const Section = styled("section")`
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 40px;
+  @media (max-width: 768px) {
+    display: block;
+    gap: 24px;
+    margin-bottom: 80px;
+  }
 `;
 const NewsContainer = styled("div")`
   display: flex;
@@ -39,6 +45,7 @@ export default function LatestNews() {
           />
         ))}
       </NewsContainer>
+      <NewsSwiper />
     </Section>
   );
 }

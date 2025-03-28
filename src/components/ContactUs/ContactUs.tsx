@@ -17,6 +17,9 @@ const Section = styled("section")`
   background-color: ${RenderaPalette.brown400};
   padding: 40px;
   gap: 40px;
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
+  }
 `;
 const InputContainer = styled("div")`
   display: flex;

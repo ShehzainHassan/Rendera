@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { RenderaPalette } from "../../Colors";
 import { HeadingLightSmall } from "../../Typography";
 import { useTranslation } from "react-i18next";
+import { scrollToProducts } from "../../utils";
 
 const NavbarContainer = styled.nav<{ $showNav: boolean }>`
   display: flex;
@@ -68,7 +69,7 @@ export default function Navbar({ $showNav = true }: NavBarProps) {
             </HeadingLightSmall>
           </Link>
         </NavItem>
-        <NavItem>
+        <NavItem onClick={scrollToProducts}>
           <HeadingLightSmall color={RenderaPalette.white0}>
             {t("navbar.collections")}
           </HeadingLightSmall>

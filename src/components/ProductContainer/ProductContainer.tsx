@@ -10,6 +10,7 @@ const Container = styled("div")`
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+    margin: 80px 0px;
   }
 `;
 

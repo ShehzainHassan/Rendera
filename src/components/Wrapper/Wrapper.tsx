@@ -10,6 +10,7 @@ export const Wrapper = styled("div")`
 
   @media (max-width: 768px) {
     padding: 20px;
+    margin: 64px 0px;
     gap: 24px;
   }
 `;

@@ -4,12 +4,18 @@ import ClientCard from "../ClientCard/ClientCard";
 import Button from "../Button/Button";
 import { useTranslation } from "react-i18next";
 import { ReviewsData } from "../../interfaces";
+import ReviewsSwiper from "../ReviewsSwiper/ReviewsSwiper";
 
 const Section = styled("section")`
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 40px;
+  @media (max-width: 768px) {
+    display: block;
+    gap: 24px;
+    margin: 80px 0px;
+  }
 `;
 const ReviewsContainer = styled("div")`
   display: flex;
@@ -19,6 +25,12 @@ const ReviewsContainer = styled("div")`
   @media (max-width: 768px) {
     display: none;
   }
+`;
+const Center = styled("div")`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
 `;
 export default function Reviews() {
   const { t } = useTranslation();
@@ -53,7 +65,10 @@ export default function Reviews() {
           />
         ))}
       </ReviewsContainer>
-      <Button>{t("clients.button")}</Button>
+      <ReviewsSwiper />
+      <Center>
+        <Button>{t("clients.button")}</Button>
+      </Center>
     </Section>
   );
 }

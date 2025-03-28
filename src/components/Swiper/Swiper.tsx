@@ -15,11 +15,11 @@ const SliderWrapper = styled.div`
     margin: 0 -10px;
   }
   .slick-dots {
-    bottom: -30px;
+    bottom: -40px;
   }
   .slick-dots li.slick-active button:before {
     opacity: 0.75;
-    color: #b28a65;
+    color: ${RenderaPalette.tan300};
     font-size: 20px;
   }
   .slick-dots li button:before {
@@ -40,14 +40,17 @@ interface StyledSliderProps {
 
 const StyledSlider: React.FC<StyledSliderProps> = ({ settings, children }) => {
   const defaultSettings: Settings = {
+    ...settings,
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    slidesToShow: 1.03,
     slidesToScroll: 1,
     appendDots: (dots) => <ul>{dots}</ul>,
     customPaging: () => <button />,
-    ...settings,
   };
 
   return (

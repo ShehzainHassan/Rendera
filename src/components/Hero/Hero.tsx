@@ -5,6 +5,7 @@ import Navbar from "../Navbar/Navbar";
 import Button from "../Button/Button";
 import { RenderaPalette } from "../../Colors";
 import { useTranslation } from "react-i18next";
+import { scrollToProducts } from "../../utils";
 
 const Main = styled.main`
   display: flex;
@@ -54,7 +55,7 @@ const SlideNavbar = styled.div<{ $isOpen: boolean }>`
   left: 0;
   height: 100vh;
   width: 250px;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.8);
   transform: ${({ $isOpen }) =>
     $isOpen ? "translateX(0)" : "translateX(-100%)"};
   transition: transform 0.3s ease-in-out;
@@ -117,12 +118,7 @@ export default function Hero() {
   }, [isNavbarOpen]);
 
   const { t } = useTranslation();
-  const scrollToProducts = () => {
-    const products = document.getElementById("products-section");
-    if (products) {
-      products.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+
   return (
     <Main>
       {isMobile ? (

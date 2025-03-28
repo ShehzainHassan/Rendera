@@ -104,14 +104,16 @@ export default function Footer() {
             fontSize="14px"
             $lineHeight="22px"
             letterSpacing="0.09px"
-            color={RenderaPalette.white0}>
+            color={RenderaPalette.white0}
+            $cursor="pointer">
             {t("footer.policy")}
           </BodyText>
           <BodyText
             fontSize="14px"
             $lineHeight="22px"
             letterSpacing="0.09px"
-            color={RenderaPalette.white0}>
+            color={RenderaPalette.white0}
+            $cursor="pointer">
             {t("footer.terms_service")}
           </BodyText>
         </PolicyServiceContainer>

@@ -225,6 +225,7 @@ export const BodyText = styled.p<{
   letterSpacing?: string;
   $mobile$lineHeight?: string;
   mobileLetterSpacing?: string;
+  $cursor?: string;
 }>`
   font-family: ${(props) => props.fontFamily || "Poppins, sans-serif"};
   font-weight: ${(props) => props.fontWeight || 400};
@@ -238,5 +239,6 @@ export const BodyText = styled.p<{
       props.$mobile$lineHeight || props.$lineHeight || "20px"};
     letter-spacing: ${(props) =>
       props.mobileLetterSpacing || props.letterSpacing || "0px"};
+    cursor: ${(props) => props.$cursor && `cursor: ${props.$cursor}`};
   }
 `;

@@ -13,6 +13,7 @@ const Section = styled("section")`
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column-reverse;
+    align-items: unset;
     gap: 32px;
   }
 `;
