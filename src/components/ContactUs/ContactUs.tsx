@@ -102,8 +102,12 @@ export default function ContactUs() {
     try {
       const response = await axios.post(
         "http://localhost:3000/newsletter/subscribe",
+        { email },
         {
-          email,
+          headers: {
+            "Content-Type": "application/json",
+            "Accept-Language": "en",
+          },
         }
       );
 
