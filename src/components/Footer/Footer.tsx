@@ -77,15 +77,32 @@ export default function Footer() {
             {t("footer.title")}
           </MediumTitle>
           <Spacer />
-          <Navbar $showNav={true} />
+          <Navbar
+            $hoverColor={RenderaPalette.white0}
+            $itemColor={RenderaPalette.white0}
+            $bgColor="transparent"
+            $showNav={true}
+            $showImage={false}
+            $$isColumnLayout={true}
+          />
         </NavContainer>
 
         <IconContainer>
           <ImageContainer>
-            <img src="/images/facebook.png" alt="as" width={23} height={23} />
+            <img
+              src="/images/facebook.png"
+              alt="facebook"
+              width={23}
+              height={23}
+            />
           </ImageContainer>
           <ImageContainer>
-            <img src="/images/instagram.png" alt="as" width={23} height={23} />
+            <img
+              src="/images/instagram.png"
+              alt="instragram"
+              width={23}
+              height={23}
+            />
           </ImageContainer>
         </IconContainer>
       </SubContainer>

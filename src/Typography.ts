@@ -18,10 +18,9 @@ export const HeroTitle = styled.h1<{
   letter-spacing: ${(props) => props.letterSpacing || "0px"};
   text-transform: ${(props) => props.textTransform || "uppercase"};
   color: ${(props) => props.color || RenderaPalette.black1000};
-
+  ${(props) => props.$textAlign && `text-align: ${props.$textAlign};`}
   @media (max-width: 768px) {
     font-size: ${(props) => props.$mobileFontSize || "48px"};
-    ${(props) => props.$textAlign && `text-align: ${props.$textAlign};`}
   }
 `;
 
@@ -144,7 +143,7 @@ export const HeadingLightSmall = styled.p<{
       &:hover {
         font-weight: ${hoverFontWeight || 800};
         font-size: ${hoverFontSize || fontSize || "16px"};
-        color: ${hoverColor || RenderaPalette.peach100};
+        color: ${hoverColor || RenderaPalette.black950};
       }
     `}
 
