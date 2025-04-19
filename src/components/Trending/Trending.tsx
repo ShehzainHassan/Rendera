@@ -22,7 +22,7 @@ const CardContainer = styled("div")`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+  gap: 32px;
 
   @media (max-width: 768px) {
     display: none;

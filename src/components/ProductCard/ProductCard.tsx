@@ -35,6 +35,8 @@ const DescriptionContainer = styled.div<{ $cardType: "medium" | "large" }>`
   justify-content: center;
   gap: 20px;
   text-align: center;
+
+  max-width: ${({ $cardType }) => ($cardType === "medium" ? "280px" : "320px")};
 `;
 
 const RatingContainer = styled.div`
@@ -54,7 +56,12 @@ export default function ProductCard({
 }: ProductCardProps) {
   return (
     <CardContainer>
-      <img src={imageUrl} alt={title} width="100%" height="auto" />
+      {$cardType === "medium" ? (
+        <img src={imageUrl} alt={title} width="316px" height="auto" />
+      ) : (
+        <img src={imageUrl} alt={title} width="360px" height="auto" />
+      )}
+
       <DetailsContainer>
         <HeadingLarge
           $lineHeight={$cardType === "medium" ? "24.44px" : "31.94px"}
