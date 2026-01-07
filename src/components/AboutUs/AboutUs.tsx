@@ -42,7 +42,7 @@ const Image = styled("img")`
 export default function AboutUs() {
   const { t } = useTranslation();
   return (
-    <Section>
+    <Section id="about-us">
       <Article>
         <SectionTitleContainer>
           <HeroTitle

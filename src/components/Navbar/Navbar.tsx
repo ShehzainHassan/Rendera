@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { RenderaPalette } from "../../Colors";
 import { HeadingLightSmall } from "../../Typography";
-import { scrollToProducts } from "../../utils";
+import { scrollToSection } from "../../utils";
 import { useState } from "react";
 
 const NavbarContainer = styled.nav<{
@@ -56,10 +56,7 @@ const NavItem = styled.li`
   display: flex;
   cursor: pointer;
 `;
-const Link = styled.a`
-  text-decoration: none;
-  color: inherit;
-`;
+
 const ImageContainer = styled.figure`
   display: flex;
   flex-direction: column;
@@ -129,57 +126,47 @@ export default function Navbar({
       )}
       <SlideNavbar $isOpen={isSlidingNavOpen}>
         <NavList $isColumnLayout={true}>
-          <NavItem>
-            <Link href="https://rendera.co" target="_blank">
-              <HeadingLightSmall
-                hoverColor={RenderaPalette.white0}
-                color={RenderaPalette.white0}>
-                {t("navbar.home")}
-              </HeadingLightSmall>
-            </Link>
+          <NavItem onClick={() => scrollToSection("hero")}>
+            <HeadingLightSmall
+              hoverColor={RenderaPalette.white0}
+              color={RenderaPalette.white0}>
+              {t("navbar.home")}
+            </HeadingLightSmall>
           </NavItem>
-          <NavItem>
-            <Link href="https://rendera.co" target="_blank">
-              <HeadingLightSmall
-                hoverColor={RenderaPalette.white0}
-                color={RenderaPalette.white0}>
-                {t("navbar.about")}
-              </HeadingLightSmall>
-            </Link>
+          <NavItem onClick={() => scrollToSection("about-us")}>
+            <HeadingLightSmall
+              hoverColor={RenderaPalette.white0}
+              color={RenderaPalette.white0}>
+              {t("navbar.about")}
+            </HeadingLightSmall>
           </NavItem>
-          <NavItem>
-            <Link href="https://rendera.co" target="_blank">
-              <HeadingLightSmall
-                hoverColor={RenderaPalette.white0}
-                color={RenderaPalette.white0}>
-                {t("navbar.shop")}
-              </HeadingLightSmall>
-            </Link>
+          <NavItem onClick={() => scrollToSection("shop")}>
+            <HeadingLightSmall
+              hoverColor={RenderaPalette.white0}
+              color={RenderaPalette.white0}>
+              {t("navbar.shop")}
+            </HeadingLightSmall>
           </NavItem>
-          <NavItem onClick={scrollToProducts}>
+          <NavItem onClick={() => scrollToSection("products-section")}>
             <HeadingLightSmall
               hoverColor={RenderaPalette.white0}
               color={RenderaPalette.white0}>
               {t("navbar.collections")}
             </HeadingLightSmall>
           </NavItem>
-          <NavItem>
-            <Link href="https://rendera.co" target="_blank">
-              <HeadingLightSmall
-                hoverColor={RenderaPalette.white0}
-                color={RenderaPalette.white0}>
-                {t("navbar.blog")}
-              </HeadingLightSmall>
-            </Link>
+          <NavItem onClick={() => scrollToSection("news")}>
+            <HeadingLightSmall
+              hoverColor={RenderaPalette.white0}
+              color={RenderaPalette.white0}>
+              {t("navbar.blog")}
+            </HeadingLightSmall>
           </NavItem>
-          <NavItem>
-            <Link href="https://rendera.co" target="_blank">
-              <HeadingLightSmall
-                hoverColor={RenderaPalette.white0}
-                color={RenderaPalette.white0}>
-                {t("navbar.contact")}
-              </HeadingLightSmall>
-            </Link>
+          <NavItem onClick={() => scrollToSection("contact")}>
+            <HeadingLightSmall
+              hoverColor={RenderaPalette.white0}
+              color={RenderaPalette.white0}>
+              {t("navbar.contact")}
+            </HeadingLightSmall>
           </NavItem>
         </NavList>
       </SlideNavbar>
@@ -189,45 +176,35 @@ export default function Navbar({
         </ImageContainer>
       )}
       <NavList $isColumnLayout={$$isColumnLayout}>
-        <NavItem>
-          <Link href="https://rendera.co" target="_blank">
-            <HeadingLightSmall hoverColor={$hoverColor} color={$itemColor}>
-              {t("navbar.home")}
-            </HeadingLightSmall>
-          </Link>
+        <NavItem onClick={() => scrollToSection("hero")}>
+          <HeadingLightSmall hoverColor={$hoverColor} color={$itemColor}>
+            {t("navbar.home")}
+          </HeadingLightSmall>
         </NavItem>
-        <NavItem>
-          <Link href="https://rendera.co" target="_blank">
-            <HeadingLightSmall hoverColor={$hoverColor} color={$itemColor}>
-              {t("navbar.about")}
-            </HeadingLightSmall>
-          </Link>
+        <NavItem onClick={() => scrollToSection("about-us")}>
+          <HeadingLightSmall hoverColor={$hoverColor} color={$itemColor}>
+            {t("navbar.about")}
+          </HeadingLightSmall>
         </NavItem>
-        <NavItem>
-          <Link href="https://rendera.co" target="_blank">
-            <HeadingLightSmall hoverColor={$hoverColor} color={$itemColor}>
-              {t("navbar.shop")}
-            </HeadingLightSmall>
-          </Link>
+        <NavItem onClick={() => scrollToSection("shop")}>
+          <HeadingLightSmall hoverColor={$hoverColor} color={$itemColor}>
+            {t("navbar.shop")}
+          </HeadingLightSmall>
         </NavItem>
-        <NavItem onClick={scrollToProducts}>
+        <NavItem onClick={() => scrollToSection("products-section")}>
           <HeadingLightSmall hoverColor={$hoverColor} color={$itemColor}>
             {t("navbar.collections")}
           </HeadingLightSmall>
         </NavItem>
-        <NavItem>
-          <Link href="https://rendera.co" target="_blank">
-            <HeadingLightSmall hoverColor={$hoverColor} color={$itemColor}>
-              {t("navbar.blog")}
-            </HeadingLightSmall>
-          </Link>
+        <NavItem onClick={() => scrollToSection("news")}>
+          <HeadingLightSmall hoverColor={$hoverColor} color={$itemColor}>
+            {t("navbar.blog")}
+          </HeadingLightSmall>
         </NavItem>
-        <NavItem>
-          <Link href="https://rendera.co" target="_blank">
-            <HeadingLightSmall hoverColor={$hoverColor} color={$itemColor}>
-              {t("navbar.contact")}
-            </HeadingLightSmall>
-          </Link>
+        <NavItem onClick={() => scrollToSection("contact")}>
+          <HeadingLightSmall hoverColor={$hoverColor} color={$itemColor}>
+            {t("navbar.contact")}
+          </HeadingLightSmall>
         </NavItem>
       </NavList>
     </NavbarContainer>

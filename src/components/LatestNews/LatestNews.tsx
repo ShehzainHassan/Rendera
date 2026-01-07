@@ -28,7 +28,7 @@ export default function LatestNews() {
   const { t } = useTranslation();
   const news = t("latest.news", { returnObjects: true }) as NewsData;
   return (
-    <Section>
+    <Section id="news">
       <TitleContainer
         title="Latest News"
         subTitle="Catch the latest updates from Rendera, including new collections, exclusive events, and exciting news from the world of luxury jewelry."

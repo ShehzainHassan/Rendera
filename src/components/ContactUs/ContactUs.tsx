@@ -133,7 +133,7 @@ export default function ContactUs() {
   };
   const { t } = useTranslation();
   return (
-    <Section>
+    <Section id="contact">
       <ToastContainer />
       <SubContainer1>
         <TitleContainer

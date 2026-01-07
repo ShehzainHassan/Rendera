@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { RenderaPalette } from "../../Colors";
 import { HeroTitle } from "../../Typography";
-import { scrollToProducts } from "../../utils";
+import { scrollToSection } from "../../utils";
 import Button from "../Button/Button";
 
 const Main = styled.main`
@@ -29,12 +29,14 @@ export default function Hero() {
   const { t } = useTranslation();
 
   return (
-    <Main>
+    <Main id="hero">
       <SubContainer>
         <HeroTitle $textAlign="center" color={RenderaPalette.white0}>
           {t("hero.title")}
         </HeroTitle>
-        <Button onClick={scrollToProducts}> {t("hero.explore")}</Button>
+        <Button onClick={() => scrollToSection("products-section")}>
+          {t("hero.explore")}
+        </Button>
       </SubContainer>
     </Main>
   );

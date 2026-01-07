@@ -39,7 +39,7 @@ export default function Trending() {
   const { t } = useTranslation();
   const products = t("trending.products", { returnObjects: true }) as Products;
   return (
-    <Section>
+    <Section id="shop">
       <TitleContainer
         title={t("trending.title")}
         subTitle={t("trending.subtext")}
